@@ -17,12 +17,23 @@ const props = (props: DataType) => {
 
   const [shoppingCart, setShoppingCart] = useRecoilState(SHOPPINGCART)
 
-  function addToCartHandler() {
-    const copy = [...shoppingCart]
-    copy.push(props)
-    setShoppingCart(copy)
-    console.log(shoppingCart)
+  function addToCartHandler(props: DataType) {
     notify()
+    setShoppingCart((prevProducts: DataType[] | []) => {
+      const mainProductInCart = shoppingCart.find((item: DataType) => item.id === props.id)
+      if (mainProductInCart) {
+        return prevProducts.map(item => {
+          if (item.id === props.id) {
+            return { ...item, count: item.count + 1 }
+          } else {
+            return item
+          }
+        })
+      } else {
+       
+      }
+    })
+
   }
 
   return (
@@ -75,7 +86,7 @@ const props = (props: DataType) => {
             <p id="after_price">{props.price - (props.price * (props.offPercent / 100))}$</p>
           </span>
           <span id='buttom_left_buttom'>
-            <button onClick={addToCartHandler} className='bg-[#F29AA7] font-semibold hover:bg-pink-400 hover:scale-105 duration-300 text-zinc-100 py-2 px-3 rounded-3xl text-2xl'>Add to Cart</button>
+            <button onClick={() => addToCartHandler(props)} className='bg-[#F29AA7] font-semibold hover:bg-pink-400 hover:scale-105 duration-300 text-zinc-100 py-2 px-3 rounded-3xl text-2xl'>Add to Cart</button>
           </span>
         </span>
 
@@ -106,3 +117,10 @@ const props = (props: DataType) => {
 }
 
 export default props
+
+
+
+// const copy = [...shoppingCart]
+// copy.push(props)
+// setShoppingCart(copy)
+// console.log(shoppingCart)

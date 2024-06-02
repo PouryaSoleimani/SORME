@@ -10,6 +10,8 @@ import { RiDeleteBinLine } from "react-icons/ri";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import 'animate.css';
+import { useRecoilState } from 'recoil';
+import { SHOPPINGCART } from '@/app/Recoil/atoms';
 
 
 type SingleProductType = { id: number, title: string, img: string, rating: number, views: number, price: number, seller: string, brand: string, off: boolean, offPercent: number, count: number }
@@ -17,7 +19,15 @@ type SingleProductType = { id: number, title: string, img: string, rating: numbe
 const ShoppingCartItem = ({ ...product }: SingleProductType) => {
   AOS.init();
 
-  console.log(product.count)
+  const [BAG, setBAG] = useRecoilState(SHOPPINGCART)
+
+
+  function deleteHandler(product: SingleProductType) {
+    const copy = [...BAG]
+    const ID = product.id
+    const newBAG = copy.filter(product => { return product.id !== ID })
+    setBAG(newBAG)
+  }
 
 
 
@@ -30,9 +40,9 @@ const ShoppingCartItem = ({ ...product }: SingleProductType) => {
       </div>
 
       <div id="center" className='w-[5rem] h-inherit flex flex-col items-center justify-start space-y-4 translate-x-6 translate-y-2'>
-        <TiHeartOutline className='w-14 h-14 bg-zinc-200 p-2 rounded-xl text-pink-400 hover:border-2 border-pink-400 duration-200' />
-        <RiDeleteBinLine className='w-14 h-14 bg-zinc-200 p-3 rounded-xl text-red-700 hover:border-2 border-red-700 duration-200' />
-        <p className='w-14 h-14 bg-zinc-200 p-1 rounded-xl text-blue-700 flex flex-col items-center justify-center hover:border-2 border-blue-700 duration-200'> Count <span className='text-2xl font-bold'>{product.count} </span></p>
+        <TiHeartOutline className='w-14 h-14 bg-zinc-200 p-2 rounded-xl text-pink-400 hover:border-2 border-pink-400 duration-150' />
+        <RiDeleteBinLine className='w-14 h-14 bg-zinc-200 p-3 rounded-xl text-red-700 hover:border-2 border-red-700 duration-150' onClick={() => deleteHandler(product)} />
+        <p className='w-14 h-14 bg-zinc-200 p-2 rounded-xl text-blue-700 flex flex-col items-center justify-center hover:border-2 border-blue-700 duration-150'> Count <span className='text-2xl font-bold'>{product.count} </span></p>
         <p id="productPrice" className='text-pink-400 font-extrabold text-3xl '>{product.price}$</p>
       </div>
 
