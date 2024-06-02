@@ -6,7 +6,7 @@ import toast, { Toaster } from 'react-hot-toast';
 import { FaRegStar, FaStar } from 'react-icons/fa'
 import 'aos/dist/aos.css';
 import { useRecoilState } from 'recoil';
-import { SHOPPINGCART } from '@/app/Recoil/atoms';
+import { ALLPRODUCTS, SHOPPINGCART } from '@/app/Recoil/atoms';
 import { v4 as uuidv4 } from 'uuid';
 
 type DataType = { id: number, title: string, price: number, img: string, rating: number, views: number, offPercent: number, count: number }
@@ -16,6 +16,7 @@ const props = (props: DataType) => {
   const notify = () => toast.success('Product Added to Cart', { style: { border: '4px solid hotpink', padding: '10px', color: 'black', fontWeight: 'bold', fontSize: '16px', borderRadius: "20px" } })
 
   const [shoppingCart, setShoppingCart] = useRecoilState(SHOPPINGCART)
+  const [allProducts, setAllProducts] = useRecoilState(ALLPRODUCTS)
 
   function addToCartHandler(props: DataType) {
     notify()
@@ -30,7 +31,8 @@ const props = (props: DataType) => {
           }
         })
       } else {
-       
+        const mainProductInShop = allProducts.find((item: DataType) => item.id === props.id)
+        return [...prevProducts, { ...mainProductInShop }]
       }
     })
 

@@ -7,13 +7,17 @@ import ProductItem from '../Components/ProductItem/ProductItem'
 import Footer from '../Components/Footer/Footer'
 import Link from 'next/link'
 import 'animate.css';
+import { useRecoilState } from 'recoil'
+import { ALLPRODUCTS } from '../Recoil/atoms'
 
 type SingleProductType = { id: number, title: string, img: string, rating: number, views: number, price: number, seller: string, brand: string, off: boolean, offPercent: number, count: number }
 
 const Shop = async () => {
 
+  const [BAG, setBAG] = useRecoilState(ALLPRODUCTS)
   const request = await fetch('http://localhost:3000/products', { cache: "no-store" })
   const response = await request.json()
+  setBAG(response)
 
   return (
     <div className='oveflow-hidden'>
