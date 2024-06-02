@@ -1,5 +1,6 @@
 //^ SHOP PAGE =================================================================================================================================================
-import React from 'react'
+"use client"
+import React, { useEffect } from 'react'
 import Header from '../Components/Header/Header'
 import BreadCrumb from '../Components/BreadCrumb/BreadCrumb'
 import ProductsOrder from '../Components/ProductsOrder/ProductsOrder'
@@ -12,12 +13,13 @@ import { ALLPRODUCTS } from '../Recoil/atoms'
 
 type SingleProductType = { id: number, title: string, img: string, rating: number, views: number, price: number, seller: string, brand: string, off: boolean, offPercent: number, count: number }
 
-const Shop = async () => {
+const Shop = () => {
 
   const [BAG, setBAG] = useRecoilState(ALLPRODUCTS)
-  const request = await fetch('http://localhost:3000/products', { cache: "no-store" })
-  const response = await request.json()
-  setBAG(response)
+  const request = () => fetch('http://localhost:3000/products', { cache: "no-store" }).then(response => { return response.json() }).then(data => setBAG(data))
+
+  useEffect(() => { request() }, [])
+
 
   return (
     <div className='oveflow-hidden'>
@@ -26,7 +28,7 @@ const Shop = async () => {
       <ProductsOrder />
 
       <div id="Products" className='px-20 animate__animated animate__pulse grid grid-cols-3 gap-1 pt-4 mb-16 flex-wrap '>
-        {response.map((product: SingleProductType) => <Link href={`/singleproduct/${product.id}`} key={product.id}><ProductItem {...product} /></Link>)}
+        {BAG.map((product: SingleProductType) => <Link href={`/singleproduct/${product.id}`} key={product.id}><ProductItem {...product} /></Link>)}
       </div>
 
       <Footer />

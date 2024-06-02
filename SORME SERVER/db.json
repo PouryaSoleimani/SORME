@@ -11,7 +11,6 @@
       "brand": "Follero",
       "off": true,
       "offPercent": 25,
-      "count":50
     },
     {
       "id": 2,
@@ -24,7 +23,6 @@
       "brand": "Follero",
       "off": true,
       "offPercent": 10,
-      "count": 1
     },
     {
       "id": 3,
@@ -37,7 +35,6 @@
       "brand": "Follero",
       "off": true,
       "offPercent": 50,
-      "count": 1
     },
     {
       "id": 4,
@@ -50,7 +47,6 @@
       "brand": "Follero",
       "off": true,
       "offPercent": 40,
-      "count": 1
     },
     {
       "id": 5,
@@ -63,7 +59,6 @@
       "brand": "Follero",
       "off": true,
       "offPercent": 30,
-      "count": 1
     },
     {
       "id": 6,
@@ -76,7 +71,6 @@
       "brand": "Follero",
       "off": true,
       "offPercent": 60,
-      "count": 1
     }
   ],
   "users": [

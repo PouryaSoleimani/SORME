@@ -32,7 +32,7 @@ const props = (props: DataType) => {
         })
       } else {
         const mainProductInShop = allProducts.find((item: DataType) => item.id === props.id)
-        return [...prevProducts, { ...mainProductInShop }]
+        return [...prevProducts, { ...mainProductInShop, count: 1 }]
       }
     })
 
