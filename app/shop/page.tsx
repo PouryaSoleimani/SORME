@@ -7,11 +7,10 @@ import ProductItem from '../Components/ProductItem/ProductItem'
 import Footer from '../Components/Footer/Footer'
 import Link from 'next/link'
 import 'animate.css';
-import Head from 'next/head'
 
-type SingleProductType = { id: number, title: string, img: string, rating: number, views: number, price: number, seller: string, brand: string, off: boolean, offPercent: number, quantity: number }
+type SingleProductType = { id: number, title: string, img: string, rating: number, views: number, price: number, seller: string, brand: string, off: boolean, offPercent: number, count: number }
 
-const Shop: React.FC = async () => {
+const Shop = async () => {
 
   const request = await fetch('http://localhost:3000/products', { cache: "no-store" })
   const response = await request.json()

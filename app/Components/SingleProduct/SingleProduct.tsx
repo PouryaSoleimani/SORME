@@ -8,9 +8,8 @@ import 'aos/dist/aos.css';
 import { useRecoilState } from 'recoil';
 import { SHOPPINGCART } from '@/app/Recoil/atoms';
 import { v4 as uuidv4 } from 'uuid';
-import { useState } from 'react';
 
-type DataType = { id: number, title: string, price: number, img: string, rating: number, views: number, offPercent: number, quantity: number }
+type DataType = { id: number, title: string, price: number, img: string, rating: number, views: number, offPercent: number, count: number }
 
 //COMPONENT
 const props = (props: DataType) => {

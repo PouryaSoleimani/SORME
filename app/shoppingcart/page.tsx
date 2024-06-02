@@ -8,7 +8,7 @@ import Footer from '../Components/Footer/Footer'
 
 
 //COMPONENT
-const ShoppingCartPage: React.FC = ({ }) => {
+const ShoppingCartPage = ({ }) => {
 
   return (
     <>

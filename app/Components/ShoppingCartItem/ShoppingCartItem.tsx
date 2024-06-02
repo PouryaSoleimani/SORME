@@ -1,5 +1,4 @@
 //^ SHOPPING CART ITEM ==============================================================================================================================================================
-"use client"
 import React from 'react'
 import { Image } from "@nextui-org/image";
 import NextImage from "next/image";;
@@ -13,12 +12,12 @@ import 'aos/dist/aos.css';
 import 'animate.css';
 
 
-type SingleProductType = { id: number, title: string, img: string, rating: number, views: number, price: number, seller: string, brand: string, off: boolean, offPercent: number, quantity: number }
+type SingleProductType = { id: number, title: string, img: string, rating: number, views: number, price: number, seller: string, brand: string, off: boolean, offPercent: number, count: number }
 
 const ShoppingCartItem = ({ ...product }: SingleProductType) => {
   AOS.init();
 
-  console.log(product.quantity)
+  console.log(product.count)
 
   return (
     <div id='ProductItemContainer' className='border-2 box-border border-zinc-300 rounded-xl pt-5 px-4  h-fit flex items-start justify-between hover:scale-110 cursor-pointer duration-300 hover:border-black animate__animated animate__pulse'>
@@ -31,8 +30,7 @@ const ShoppingCartItem = ({ ...product }: SingleProductType) => {
       <div id="center" className='w-[5rem] h-inherit flex flex-col items-center justify-start space-y-4 translate-x-6 translate-y-2'>
         <TiHeartOutline className='w-14 h-14 bg-zinc-200 p-2 rounded-xl text-pink-400' />
         <RiDeleteBinLine className='w-14 h-14 bg-zinc-200 p-3 rounded-xl text-red-700' />
-        <p className='w-14 h-14 bg-zinc-200 p-2 rounded-xl text-blue-700'>{product.quantity}</p>
-        <h1>HELLO WOLRD</h1>
+        <p className='w-14 h-14 bg-zinc-200 p-2 rounded-xl text-blue-700'>{product.count}</p>
         <p id="productPrice" className='text-pink-400 font-extrabold text-3xl '>{product.price}$</p>
       </div>
 
