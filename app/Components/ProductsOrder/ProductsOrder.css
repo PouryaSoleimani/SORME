@@ -1,0 +1,12 @@
+.active {
+  border-radius: 6px;
+  background-color: #f9a8d4;
+  color: white;
+}
+
+.active:hover {
+  background-color: #f9a8d4;
+  color: white;
+}
+
+/* rounded-md hover:bg-pink-300 hover:text-white duration-200 */

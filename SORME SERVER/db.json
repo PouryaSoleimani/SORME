@@ -1,0 +1,89 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "Fix Arcanil Powder",
+      "img": "/images/products/Product_1.png",
+      "rating": 3,
+      "views": 20,
+      "price": 60,
+      "seller": "Sorme",
+      "brand": "Follero",
+      "off": true,
+      "offPercent": 25,
+      "quantity" : 1
+    },
+    {
+      "id": 2,
+      "title": "Cozart Tanning Powder",
+      "img": "/images/products/Product_2.png",
+      "rating": 4,
+      "views": 42,
+      "price": 54,
+      "seller": "Sorme",
+      "brand": "Follero",
+      "off": true,
+      "offPercent": 10,
+      "quantity" : 1
+    },
+    {
+      "id": 3,
+      "title": "Estee Lauder Dpuble Wear",
+      "img": "/images/products/Product_3.png",
+      "rating": 5,
+      "views": 12,
+      "price": 98,
+      "seller": "Sorme",
+      "brand": "Follero",
+      "off": true,
+      "offPercent": 50,
+      "quantity" : 1
+    },
+    {
+      "id": 4,
+      "title": "Blush Flormar Model Terracotta",
+      "img": "/images/products/Product_4.png",
+      "rating": 3,
+      "views": 78,
+      "price": 126,
+      "seller": "Sorme",
+      "brand": "Follero",
+      "off": true,
+      "offPercent": 40,
+      "quantity" : 1
+    },
+    {
+      "id": 5,
+      "title": "My Concealer Gentle Touch",
+      "img": "/images/products/Product_5.png",
+      "rating": 4,
+      "views": 26,
+      "price": 74,
+      "seller": "Sorme",
+      "brand": "Follero",
+      "off": true,
+      "offPercent": 30,
+      "quantity" : 1
+    },
+    {
+      "id": 6,
+      "title": "Florma Concealer Gentle Touch",
+      "img": "/images/products/Product_6.png",
+      "rating": 2,
+      "views": 83,
+      "price": 118,
+      "seller": "Sorme",
+      "brand": "Follero",
+      "off": true,
+      "offPercent": 60,
+      "quantity" : 1
+    }
+  ],
+  "users": [
+    {
+      "email": "pourya@gmail.com",
+      "password": "$2a$10$GkGIbDHO4vOFlIlusQzFnOQJe03CCtit9SWKMJCXl.C9hCM4hgJSm",
+      "id": 1
+    }
+  ]
+}
