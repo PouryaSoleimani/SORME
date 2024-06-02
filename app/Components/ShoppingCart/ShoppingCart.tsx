@@ -9,7 +9,7 @@ import { useRecoilState } from 'recoil';
 import { v4 as uuidv4 } from 'uuid';
 import ShoppingCartItem from '../ShoppingCartItem/ShoppingCartItem';
 
-type SingleProductType = { id: number, title: string, img: string, rating: number, views: number, price: number, seller: string, brand: string, off: boolean, offPercent: number, count: number}
+type SingleProductType = { id: number, title: string, img: string, rating: number, views: number, price: number, seller: string, brand: string, off: boolean, offPercent: number, count: number }
 
 //COMPONENT ======================================================================================================================================
 const ShoppingCart = () => {
