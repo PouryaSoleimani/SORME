@@ -4,6 +4,7 @@ import Header from '../Components/Header/Header'
 import BreadCrumb from '../Components/BreadCrumb/BreadCrumb'
 import ShoppingCart from '../Components/ShoppingCart/ShoppingCart'
 import Footer from '../Components/Footer/Footer'
+import ShoppingCartSideBar from '../Components/ShoppingCartSideBar/ShoppingCartSideBar'
 
 
 
@@ -14,7 +15,10 @@ const ShoppingCartPage = ({ }) => {
     <>
       <Header />
       <BreadCrumb />
+      <div className='flex items-center'>
       <ShoppingCart />
+      <ShoppingCartSideBar />
+      </div>
       <Footer />
     </>
   )

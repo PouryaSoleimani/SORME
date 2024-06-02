@@ -33,9 +33,7 @@ const ShoppingCartItem = ({ ...product }: SingleProductType) => {
 
   return (
     <section className='flex'>
-      {/* LEFT */}
-      <div id='ProductItemContainer_LEFT' className='border-2 box-border border-zinc-300 rounded-xl pt-5 px-4  h-fit flex  hover:scale-110 cursor-pointer duration-300 hover:border-black animate__animated animate__pulse'>
-        {/* LEFT */}
+      <div id='ProductItemContainer' className='border-2 box-border border-zinc-300 rounded-xl pt-5 px-4  h-fit flex  hover:scale-110 cursor-pointer duration-300 hover:border-black animate__animated animate__pulse'>
         <div id="left" className='flex flex-col items-center justify-start h-fit '>
           <Image as={NextImage} isZoomed width={300} height={200} alt="Product #1" src={product.img} className='cursor-pointer w-[12rem] h-[14rem]' />
           <h1 className='font-semibold text-lg'>{product.title}</h1>
