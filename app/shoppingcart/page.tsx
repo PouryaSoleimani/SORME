@@ -15,9 +15,9 @@ const ShoppingCartPage = ({ }) => {
     <>
       <Header />
       <BreadCrumb />
-      <div className='flex items-center'>
-      <ShoppingCart />
-      <ShoppingCartSideBar />
+      <div className='flex items-start'>
+        <ShoppingCart />
+        <ShoppingCartSideBar />
       </div>
       <Footer />
     </>
