@@ -31,7 +31,8 @@ const ShoppingCartItem = ({ ...product }: SingleProductType) => {
       <div id="center" className='w-[5rem] h-inherit flex flex-col items-center justify-start space-y-4 translate-x-6 translate-y-2'>
         <TiHeartOutline className='w-14 h-14 bg-zinc-200 p-2 rounded-xl text-pink-400' />
         <RiDeleteBinLine className='w-14 h-14 bg-zinc-200 p-3 rounded-xl text-red-700' />
-        <p className='w-14 h-14 bg-zinc-200 p-2 rounded-xl text-blue-700'>{String(product.quantity)}</p>
+        <p className='w-14 h-14 bg-zinc-200 p-2 rounded-xl text-blue-700'>{product.quantity}</p>
+        <h1>HELLO WOLRD</h1>
         <p id="productPrice" className='text-pink-400 font-extrabold text-3xl '>{product.price}$</p>
       </div>
 
