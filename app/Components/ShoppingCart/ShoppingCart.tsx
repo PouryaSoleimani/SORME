@@ -30,7 +30,7 @@ const ShoppingCart = () => {
         </span>
       ) : (
 
-        <div id="Products" className='px-20 animate__animated animate__pulse grid grid-cols-3 gap-1 pt-4 mb-16 flex-wrap place-items-start '>
+        <div id="Products" className='px-20 animate__animated animate__pulse flex gap-1 pt-4 mb-16 flex-wrap place-items-start '>
           {products.map((item: SingleProductType) => <ShoppingCartItem key={uuidv4()} {...item} />)}
         </div>
 
