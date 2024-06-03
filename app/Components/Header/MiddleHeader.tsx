@@ -1,12 +1,16 @@
 //^ MIDDLE HEADER
-// "use client"
+"use client"
 import Image from 'next/image'
 import React from 'react'
 import Link from 'next/link';
 import { PiPackageLight } from "react-icons/pi";
 import 'animate.css';
+import { useRecoilState } from 'recoil';
+import { SHOPPINGCART } from '@/app/Recoil/atoms';
 
-const MiddleHeader: React.FC = () => {
+const MiddleHeader = () => {
+  const [BAG, setBAG] = useRecoilState(SHOPPINGCART)
+
   return (
     <section className='w-screen h-fit px-20 py-2 flex items-center justify-between overflow-hidden animate__animated animate__fadeInUp'>
 
@@ -44,7 +48,7 @@ const MiddleHeader: React.FC = () => {
         <Link href='/shoppingcart' className='px-4'>
           <span id='ShoppingCartButton' className='bg-zinc-200/70 rounded-lg'>
             <img src="/images/icons/HeaderShoppingCart.png" className='w-[35px] h-[35px] p-2 relative hover:scale-125 duration-300' />
-            <p className='absolute bg-[#F29AA7] text-white px-1 -translate-x-2 -translate-y-10 text-sm rounded-[100%]'>0</p>
+            <p className='absolute bg-[#F29AA7] text-white px-1 top-7 font-bold text-sm rounded-[100%]'>{BAG.length}</p>
           </span>
         </Link>
 
