@@ -14,7 +14,7 @@ type DataType = { id: number, title: string, price: number, img: string, rating:
 
 //COMPONENT
 const props = (props: DataType) => {
-  const notify = () => toast.success('Product Added to Cart', { style: { border: '4px solid hotpink', padding: '10px', color: 'black', fontWeight: 'bold', fontSize: '16px', borderRadius: "20px" } })
+  const notify = () => toast.success('Product Added to Cart', { style: { border: '3px solid #F29AA7', padding: '10px', color: 'black', fontWeight: 'bold', fontSize: '10px', borderRadius: "10px" } })
 
   const [shoppingCart, setShoppingCart] = useRecoilState(SHOPPINGCART)
 
@@ -28,7 +28,7 @@ const props = (props: DataType) => {
 
   return (
 
-    <div id="main" className='w-full h-fit px-20 pt-6 mb-[5rem] flex flex-col flex-wrap flex-shrink ' suppressHydrationWarning  >
+    <div id="main" className='w-screen h-fit px-20 pt-6 mb-[5rem] flex flex-col flex-wrap flex-shrink ' suppressHydrationWarning  >
       <Toaster position="top-right" reverseOrder={true} />
       {/* TOP SECTION */}
       <span id="top" data-aos="fade-up" data-aos-duration="700" className='w-full h-fit py-4  flex items-center justify-start space-x-14'>
