@@ -6,24 +6,31 @@ import toast, { Toaster } from 'react-hot-toast';
 import { FaRegStar, FaStar } from 'react-icons/fa'
 import 'aos/dist/aos.css';
 import { useRecoilState } from 'recoil';
-import { SHOPPINGCART } from '@/app/Recoil/atoms';
+import { ALLPRODUCTS, SHOPPINGCART } from '@/app/Recoil/atoms';
 import { v4 as uuidv4 } from 'uuid';
 import { useState } from 'react';
 
-type DataType = { id: number, title: string, price: number, img: string, rating: number, views: number, offPercent: number, quantity: number }
+type DataType = { id: number, title: string, price: number, img: string, rating: number, views: number, offPercent: number, quantity: number, count: number }
 
 //COMPONENT
 const props = (props: DataType) => {
   const notify = () => toast.success('Product Added to Cart', { style: { border: '3px solid #F29AA7', padding: '10px', color: 'black', fontWeight: 'bold', fontSize: '10px', borderRadius: "10px" } })
 
-  const [shoppingCart, setShoppingCart] = useRecoilState(SHOPPINGCART)
+  const [allPRODUCTS, setallPRODUCTS] = useRecoilState(ALLPRODUCTS)
+  const [BAG, setBAG] = useRecoilState(SHOPPINGCART)
 
   function addToCartHandler() {
-    const copy = [...shoppingCart]
-    copy.push(props)
-    setShoppingCart(copy)
-    console.log(shoppingCart)
     notify()
+    setBAG((prevProducts: DataType[] | []) => {
+      const mainProductsInBag = BAG.find((item: DataType) => item.id === props.id)
+
+      if (mainProductsInBag) {
+        return prevProducts.map(item => { if (item.id === props.id) { return { ...item, count: item.count + 1 } } else { return item } })
+      } else {
+        const mainProductInShop = allPRODUCTS.find((item: DataType) => item.id === props.id) as DataType
+        return [...prevProducts, { ...mainProductInShop, count: 1 }]
+      }
+    })
   }
 
   return (

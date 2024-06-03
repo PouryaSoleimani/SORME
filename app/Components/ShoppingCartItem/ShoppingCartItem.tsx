@@ -1,5 +1,5 @@
 //^ SHOPPING CART ITEM ==============================================================================================================================================================
-"use client"
+// "use client"
 import React from 'react'
 import { Image } from "@nextui-org/image";
 import NextImage from "next/image";;
