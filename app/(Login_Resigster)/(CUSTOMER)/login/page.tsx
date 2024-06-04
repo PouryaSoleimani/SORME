@@ -21,10 +21,7 @@ const LoginPage = ({ }) => {
   //? STATES
   const [userInfos, setUserInfos] = useRecoilState(USERINFOS)
   const [token, setToken] = useRecoilState(TOKEN)
-  const [userEmail, setUserEmail] = useState("")
-  const [userPassword, setUserPassword] = useState("")
   const [ISLOGGEDIN, setISLOGGEDIN] = useRecoilState(isLoggedIn)
-
   const router = useRouter()
 
   //^ TOAST
