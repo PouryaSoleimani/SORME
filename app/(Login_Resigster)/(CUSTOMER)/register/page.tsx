@@ -13,6 +13,7 @@ import toast, { Toaster } from 'react-hot-toast';
 type Inputs = { username: string, email: string, password: string }
 
 const RegisterPage = ({ }) => {
+  const notify = () => toast.success('Signed Up Successfully', { style: { border: '3px solid #F29AA7', padding: '10px', color: 'black', fontWeight: 'bold', fontSize: '16px', borderRadius: "10px" } })
 
   //YUP
   const schema = yup.object().shape({
@@ -24,15 +25,23 @@ const RegisterPage = ({ }) => {
   //REACT-HOOK-FORM
   const { register, handleSubmit, formState: { errors }, reset } = useForm<Inputs>({ resolver: yupResolver(schema) })
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => { console.log(data); reset() }
+  //*SUBMIT HANDLER
+  const onSubmit: SubmitHandler<Inputs> = (data) => {
+    console.log(data);
+    notify();
+    reset()
+  }
+
 
   const [isVisible, setIsVisible] = React.useState(false);
 
   const toggleVisibility = () => setIsVisible(!isVisible);
 
 
+
   return (
-    <div className="flex items-center justify-center w-screen h-screen">
+    <div suppressHydrationWarning className="flex items-center justify-center w-screen h-screen">
+      <Toaster position="top-right" reverseOrder={true} />
       <div id="form_container" className="w-[33rem] h-fit bg-[#F29AA7] rounded-3xl flex flex-col px-2 scale-75">
 
         {/* FORM TOP HEADER ------------------------------------------------------------------------------------------------ */}
