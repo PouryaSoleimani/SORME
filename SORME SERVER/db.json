@@ -73,5 +73,12 @@
       "offPercent": 60
     }
   ],
-  "users": []
+  "users": [
+    {
+      "email": "pourya@gmail.com",
+      "password": "$2a$10$xSEUPGWJgxEzEyBWK6WZjejXuGJIla7iz0H1/rgM822xN09nm/VxW",
+      "username": "pourya ",
+      "id": 1
+    }
+  ]
 }
