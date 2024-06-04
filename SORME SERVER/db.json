@@ -74,40 +74,6 @@
     }
   ],
   "users": [
-    {
-      "email": "pourya@gmail.com",
-      "password": "$2a$10$GkGIbDHO4vOFlIlusQzFnOQJe03CCtit9SWKMJCXl.C9hCM4hgJSm",
-      "id": 1
-    },
-    {
-      "email": "asdsad@afsafas",
-      "password": "$2a$10$3006pUt2MO2/LJjAa57SR.zgzGFhop4UJUCwLSi4JWILQ1STdkjNC",
-      "username": "ad",
-      "id": 2
-    },
-    {
-      "email": "alireza@gmail.com",
-      "password": "$2a$10$cO8N0AdZnAxu83fvpk6Vtet7oY3yoCqCtDHCPC8mcT26QmSvoBl5e",
-      "username": "ALIREZA",
-      "id": 3
-    },
-    {
-      "email": "ali@gmail.com",
-      "password": "$2a$10$S7m2dAbfjySGkUsw5dN9OOsl7TcZvFjWtKAfLzzgv3lypZDVk0glG",
-      "username": "mohammad",
-      "id": 4
-    },
-    {
-      "email": "asd@fafasfsaf",
-      "password": "$2a$10$5Y2Bmkxij2NmzXjEywaBbuO6pnN8QwEKWEOrfq3WYxINsRysPO1RS",
-      "username": "mohammad",
-      "id": 5
-    },
-    {
-      "email": "mohammad@gmail.com",
-      "password": "$2a$10$lFJyoZl4kIUxF3615nu54eFdxt/zyM6Cbq28v1G7Nfn3ruU24EMF6",
-      "username": "mohammad",
-      "id": 6
-    }
+
   ]
 }
