@@ -20,6 +20,7 @@ const RegisterPage = ({ }) => {
   const notify = () => toast.success('Signed Up Successfully', { style: { border: '3px solid #F29AA7', padding: '10px', color: 'black', fontWeight: 'bold', fontSize: '16px', borderRadius: "10px" } })
   const notify2 = () => toast.error('There Was a Problem , Try Again', { style: { border: '3px solid #F29AA7', padding: '10px', color: 'black', fontWeight: 'bold', fontSize: '16px', borderRadius: "10px" } })
   const router = useRouter()
+
   //STATES
   const [ISLOGGEDIN, setISLOGGEDIN] = useRecoilState(isLoggedIn)
   const [userInfos, setUserInfos] = useRecoilState(USERINFOS)
@@ -53,7 +54,7 @@ const RegisterPage = ({ }) => {
 
   const toggleVisibility = () => setIsVisible(!isVisible);
 
-
+  function goToLogin() { router.push('/login') }
 
   return (
     <>
@@ -103,7 +104,7 @@ const RegisterPage = ({ }) => {
             <button suppressHydrationWarning type="submit" className="bg-white w-full text-[#F29AA7] text-2xl rounded-lg font-extrabold py-4 text-center hover:bg-pink-500 hover:text-white duration-300">Create an Account</button>
           </form>
 
-          <button suppressHydrationWarning className="w-full text-center py-6 text-white text-2xl font-bold hover:scale-110 duration-300">Sign In</button>
+          <button suppressHydrationWarning onClick={goToLogin} className="w-full text-center py-6 text-white text-2xl font-bold hover:scale-110 duration-300">Sign In</button>
 
         </div>
       </div>
