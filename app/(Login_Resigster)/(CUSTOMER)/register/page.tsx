@@ -7,11 +7,13 @@ import * as yup from 'yup';
 import { FaUser } from "react-icons/fa6";
 import { FiEye } from "react-icons/fi";
 import { FiEyeOff } from "react-icons/fi";
+import toast, { Toaster } from 'react-hot-toast';
 
 
 type Inputs = { username: string, email: string, password: string }
 
 const RegisterPage = ({ }) => {
+  const notify = () => toast.success('Here is your toast.');
   //YUP
   const schema = yup.object().shape({
     username: yup.string().required("Name is Required"),
