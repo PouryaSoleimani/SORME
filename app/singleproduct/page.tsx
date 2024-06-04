@@ -15,7 +15,7 @@ const SingleProductPage = () => {
 
   return (
 
-    <section className='overflow-hidden'>
+    <section suppressHydrationWarning className='overflow-hidden'>
       <Header />
       <BreadCrumb />
       {/* <SingleProduct /> */}

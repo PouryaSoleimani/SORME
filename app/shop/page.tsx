@@ -31,7 +31,7 @@ const Shop = () => {
       <BreadCrumb />
       <ProductsOrder />
 
-      <span id="Products" className='px-20 animate__animated animate__pulse grid grid-cols-3 gap-1 pt-4 mb-16 flex-wrap '>
+      <span id="Products" className='px-20 animate__animated animate__pulse flex items-center justify-center gap-1 pt-4 mb-16 flex-wrap '>
         {BAG.map((product: SingleProductType) => <Link href={`/singleproduct/${product.id}`} key={product.id}><ProductItem {...product} /></Link>)}
       </span>
 
