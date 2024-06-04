@@ -8,12 +8,15 @@ import { FaUser } from "react-icons/fa6";
 import { FiEye } from "react-icons/fi";
 import { FiEyeOff } from "react-icons/fi";
 import toast, { Toaster } from 'react-hot-toast';
+import { useRecoilState } from "recoil";
+import { isLoggedIn } from "@/app/Recoil/atoms";
 
 
 type Inputs = { username: string, email: string, password: string }
 
 const RegisterPage = ({ }) => {
   const notify = () => toast.success('Signed Up Successfully', { style: { border: '3px solid #F29AA7', padding: '10px', color: 'black', fontWeight: 'bold', fontSize: '16px', borderRadius: "10px" } })
+  const [ISLOGGEDIN, setISLOGGEDIN] = useRecoilState(isLoggedIn)
 
   //YUP
   const schema = yup.object().shape({
@@ -27,9 +30,11 @@ const RegisterPage = ({ }) => {
 
   //*SUBMIT HANDLER
   const onSubmit: SubmitHandler<Inputs> = (data) => {
-    console.log(data);
+    console.log(data)
     notify();
-    reset()
+    reset();
+    setISLOGGEDIN(true)
+    setTimeout(() => { console.log(ISLOGGEDIN) }, 1000);
   }
 
 
