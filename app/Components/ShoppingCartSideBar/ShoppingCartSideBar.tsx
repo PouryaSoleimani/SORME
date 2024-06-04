@@ -5,20 +5,15 @@ import { useRecoilState } from 'recoil'
 
 type SingleProductType = { id: number, title: string, img: string, rating: number, views: number, price: number, seller: string, brand: string, off: boolean, offPercent: number, count: number }
 
-
+// type TotalType = number | null
 
 const ShoppingCartSideBar = () => {
-  const [BAG, setBAG] = useRecoilState<SingleProductType[]>(SHOPPINGCART)
-
+  const [BAG, setBAG] = useRecoilState(SHOPPINGCART)
   const [totalCheck, setTotalCheck] = useState(0)
 
   const prices = BAG.map((item: SingleProductType) => item.price)
 
-  const counts = BAG.map((item: SingleProductType) => item?.count)
-
-  useEffect(() => { if (prices.length) { let sum = prices.reduce((a: number, b: number) => a + b); setTotalCheck(sum) } }, [BAG])
-
-  // const TOTAL = BAG.reduce((item1: SingleProductType, item2: SingleProductType) => (item1.price * item1.count) + (item2.price * item2.count))
+  const counts = BAG.map((item: SingleProductType) => item.count)
 
   const TOTAL = 0
   
