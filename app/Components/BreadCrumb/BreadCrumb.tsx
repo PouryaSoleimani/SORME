@@ -12,7 +12,7 @@ const BreadCrumb = () => {
 
   //RETURN
   return (
-    <div className='flex items-center justify-start px-20 text-xl leading-10 animate__animated animate__fadeInLeft'>
+    <div className='flex items-center justify-start px-[5.5rem] text-xl leading-10 animate__animated animate__fadeInLeft'>
       <Breadcrumbs>
         <BreadcrumbItem><Link href='/'>Home</Link></BreadcrumbItem>
         <BreadcrumbItem><Link href='/shop'>Shop</Link></BreadcrumbItem>
