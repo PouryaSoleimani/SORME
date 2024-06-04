@@ -10,10 +10,10 @@ const ShoppingCartSideBar = () => {
   const [BAG, setBAG] = useRecoilState(SHOPPINGCART)
   const [totalCheck, setTotalCheck] = useState(0)
   const prices = BAG.map((item: SingleProductType) => item.price)
-  const counts = BAG.map((item: SingleProductType) => item.count)
+  const counts = BAG.map((item: SingleProductType) => item?.count)
   useEffect(() => { if (prices.length) { let sum = prices.reduce((a: number, b: number) => a + b); setTotalCheck(sum) } }, [BAG])
-  const TOTAL = totalCheck * counts
-
+  const TOTAL = BAG.reduce((item1: SingleProductType, item2: SingleProductType) => (item1.price * item1.count) + (item2.price * item2.count))
+  console.log(TOTAL)
   function emptyBagHandler() { setBAG([]) }
 
   return (
