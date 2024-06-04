@@ -1,6 +1,6 @@
-//^ LOGIN PAGE
+//^ LOGIN PAGE ===========================================================================================================================================================================
 "use client"
-import React from "react"
+import React, { useState } from "react"
 import { useForm, SubmitHandler } from "react-hook-form"
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
@@ -8,25 +8,48 @@ import { FaUser } from "react-icons/fa6";
 import { FiEye } from "react-icons/fi";
 import { FiEyeOff } from "react-icons/fi";
 import { useRouter } from "next/navigation";
-
+import { useRecoilState } from "recoil";
+import { TOKEN, USERINFOS } from "@/app/Recoil/atoms";
+import axios from 'axios'
 
 type Inputs = { username: string, password: string }
 
+
 const LoginPage = ({ }) => {
-  //YUP
+  // STATES
+  const [userInfos, setUserInfos] = useRecoilState(USERINFOS)
+  const [token, setToken] = useRecoilState(TOKEN)
+  const [userEmail, setUserEmail] = useState("")
+  const [userPassword, setUserPassword] = useState("")
+
+  console.log(userInfos)
+  //^ YUP
   const schema = yup.object().shape({
     username: yup.string().required("Name is Required"),
     password: yup.string().required('Password is Required')
   }).required();
 
-  //REACT-HOOK-FORM
+  //& REACT-HOOK-FORM
   const { register, handleSubmit, formState: { errors }, reset } = useForm<Inputs>({ resolver: yupResolver(schema) })
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => { console.log(data); reset() }
+
+  const inputedUserInfos = { email: userEmail, password: userPassword }
+  function sendData() { axios.post('http://localhost:3000/users/login', inputedUserInfos).then(response => console.log(response)).catch(error => console.log(error)) }
+
+  //* SUBMIT HANDLER
+  const onSubmit: SubmitHandler<Inputs> = (data) => {
+    console.log(data);
+    reset()
+    sendData()
+  }
+
+
 
   const [isVisible, setIsVisible] = React.useState(false);
-
   const toggleVisibility = () => setIsVisible(!isVisible);
+
+
+  // ROUTER
   const router = useRouter()
   function backToSignUp() { router.push('/register') }
   return (
@@ -47,8 +70,8 @@ const LoginPage = ({ }) => {
         <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col p-6 space-y-6 border-b-4 border-dotted border-white px-4'>
           {/* USERNAME */}
           <span className='flex flex-col'>
-            <label htmlFor="username" className='absolute -translate-y-4 text-xl font-bold z-30 translate-x-4 text-white bg-[#F29AA7] px-2 '>Username</label>
-            <input type="text" placeholder='Hardy.Oppenh@gmail.com' {...register("username")} className='px-5 py-5 z-0 border-4 placeholder:text-xl relative left-0 placeholder:text-white/50 border-white bg-transparent rounded-lg w-full text-3xl text-white font-semibold' />
+            <label htmlFor="username" className='absolute -translate-y-4 text-xl font-bold z-30 translate-x-4 text-white bg-[#F29AA7] px-2 '>Email</label>
+            <input type="text" placeholder='Hardy.Oppenh@gmail.com' {...register("username")} value={userEmail} onChange={(event) => setUserEmail(event.target.value)} className='px-5 py-5 z-0 border-4 placeholder:text-xl relative left-0 placeholder:text-white/50 border-white bg-transparent rounded-lg w-full text-3xl text-white font-semibold' />
             <FaUser className="text-white w-10 h-12 absolute translate-y-3 translate-x-[26.5rem]" />
             {errors.username && <p className='text-red-700 font-semibold text-2xl'>{errors.username.message}</p>}
           </span>
@@ -56,7 +79,7 @@ const LoginPage = ({ }) => {
           {/* PASSWORD */}
           <span className='flex flex-col'>
             <label htmlFor="password" className='absolute -translate-y-4 text-xl font-bold z-30 translate-x-4 text-white bg-[#F29AA7] px-2 '>Password</label>
-            <input type={isVisible ? "text" : "password"} placeholder='***********' {...register("password")} className='px-5 py-5 z-0 border-4 placeholder:text-xl relative left-0 placeholder:text-white/50 border-white bg-transparent rounded-lg w-full text-3xl text-white font-semibold' />
+            <input type={isVisible ? "text" : "password"} placeholder='***********' {...register("password")} value={userPassword} onChange={(event) => setUserPassword(event.target.value)} className='px-5 py-5 z-0 border-4 placeholder:text-xl relative left-0 placeholder:text-white/50 border-white bg-transparent rounded-lg w-full text-3xl text-white font-semibold' />
             <span onClick={toggleVisibility} className="text-white text-5xl w-10 h-12 absolute translate-y-[14px] translate-x-[26.2rem] cursor-pointer" >
               {isVisible ? (
                 <FiEye />
