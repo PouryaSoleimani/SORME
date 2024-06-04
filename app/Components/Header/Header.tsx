@@ -6,7 +6,7 @@ import ButtomHeader from './ButtomHeader'
 
 const Header: React.FC = () => {
   return (
-    <div className='overflow-hidden'>
+    <div className='overflow-hidden w-screen'>
       <TopHeader />
       <MiddleHeader />
       <ButtomHeader />

@@ -12,7 +12,7 @@ const MiddleHeader = () => {
   const [BAG, setBAG] = useRecoilState(SHOPPINGCART)
 
   return (
-    <section className='w-screen h-fit px-20 py-2 flex items-center justify-between overflow-hidden animate__animated animate__fadeInUp'>
+    <section className='max-w-screen h-fit px-20 py-2 flex items-center overflow-hidden justify-between  animate__animated animate__fadeInUp'>
 
       {/* LEFT */}
       <div id="left" className='flex items-center justify-center space-x-16'>
