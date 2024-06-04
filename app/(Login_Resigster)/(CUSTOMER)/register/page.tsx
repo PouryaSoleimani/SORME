@@ -13,7 +13,7 @@ import toast, { Toaster } from 'react-hot-toast';
 type Inputs = { username: string, email: string, password: string }
 
 const RegisterPage = ({ }) => {
-  const notify = () => toast.success('Here is your toast.');
+
   //YUP
   const schema = yup.object().shape({
     username: yup.string().required("Name is Required"),
@@ -33,7 +33,7 @@ const RegisterPage = ({ }) => {
 
   return (
     <div className="flex items-center justify-center w-screen h-screen">
-      <div id="form_container" className="w-[33rem] h-fit bg-[#F29AA7] rounded-3xl flex flex-col px-2">
+      <div id="form_container" className="w-[33rem] h-fit bg-[#F29AA7] rounded-3xl flex flex-col px-2 scale-75">
 
         {/* FORM TOP HEADER ------------------------------------------------------------------------------------------------ */}
         <div id="form_top" className="mt-10 flex items-center justify-between pr-6 pl-0">
