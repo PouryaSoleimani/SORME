@@ -13,7 +13,6 @@ import { TOKEN, USERINFOS, isLoggedIn } from "@/app/Recoil/atoms";
 import axios from 'axios'
 import { useRouter } from "next/navigation";
 
-
 type Inputs = { username: string, email: string, password: string }
 
 const RegisterPage = ({ }) => {
@@ -23,8 +22,9 @@ const RegisterPage = ({ }) => {
 
   //STATES
   const [ISLOGGEDIN, setISLOGGEDIN] = useRecoilState(isLoggedIn)
-  const [userInfos, setUserInfos] = useRecoilState(USERINFOS)
   const [token, setToken] = useRecoilState(TOKEN)
+  const [userInfos, setUserInfos] = useRecoilState(USERINFOS)
+
   //^YUP
   const schema = yup.object().shape({
     username: yup.string().required("Name is Required"),
@@ -36,7 +36,7 @@ const RegisterPage = ({ }) => {
   const { register, handleSubmit, formState: { errors }, reset } = useForm<Inputs>({ resolver: yupResolver(schema) })
   const sendData = (data: {}) => {
     axios.post('http://localhost:3000/users', data)
-      .then((response) => { console.log(response); setToken(response.data.accessToken) }).catch(error => { console.log(error); notify2() })
+      .then((response) => { console.log(response); setToken(response.data.accessToken); localStorage.setItem('user', response.data.accessToken) }).catch(error => { console.log(error); notify2() })
   }
   //*SUBMIT HANDLER
   const onSubmit: SubmitHandler<Inputs> = (data, event) => {
