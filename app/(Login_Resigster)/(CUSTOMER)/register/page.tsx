@@ -9,32 +9,35 @@ import { FiEye } from "react-icons/fi";
 import { FiEyeOff } from "react-icons/fi";
 import toast, { Toaster } from 'react-hot-toast';
 import { useRecoilState } from "recoil";
-import { isLoggedIn } from "@/app/Recoil/atoms";
-
+import { USERINFOS, isLoggedIn } from "@/app/Recoil/atoms";
+import axios from 'axios'
+import dynamic from "next/dynamic";
 
 type Inputs = { username: string, email: string, password: string }
 
 const RegisterPage = ({ }) => {
   const notify = () => toast.success('Signed Up Successfully', { style: { border: '3px solid #F29AA7', padding: '10px', color: 'black', fontWeight: 'bold', fontSize: '16px', borderRadius: "10px" } })
   const [ISLOGGEDIN, setISLOGGEDIN] = useRecoilState(isLoggedIn)
+  const [userInfos, setUserInfos] = useRecoilState(USERINFOS)
 
-  //YUP
+  //^YUP
   const schema = yup.object().shape({
     username: yup.string().required("Name is Required"),
     email: yup.string().email("Invalid Email").required("Email is Required").min(10, 'Email Must be Longer').max(30, "Email Must be Max 30 Chars. "),
     password: yup.string().required('Password is Required')
   }).required();
 
-  //REACT-HOOK-FORM
+  //&REACT-HOOK-FORM
   const { register, handleSubmit, formState: { errors }, reset } = useForm<Inputs>({ resolver: yupResolver(schema) })
 
   //*SUBMIT HANDLER
-  const onSubmit: SubmitHandler<Inputs> = (data) => {
-    console.log(data)
+  const onSubmit: SubmitHandler<Inputs> = (data, event) => {
+    event?.preventDefault()
+    axios.post('http://localhost:3000/users', data)
+    setUserInfos(data)
     notify();
     reset();
     setISLOGGEDIN(true)
-    setTimeout(() => { console.log(ISLOGGEDIN) }, 1000);
   }
 
 
@@ -45,12 +48,12 @@ const RegisterPage = ({ }) => {
 
 
   return (
-    <div suppressHydrationWarning className="flex items-center justify-center w-screen h-screen">
+    <section suppressHydrationWarning className="flex items-center justify-center w-screen h-screen">
       <Toaster position="top-right" reverseOrder={true} />
       <div id="form_container" className="w-[33rem] h-fit bg-[#F29AA7] rounded-3xl flex flex-col px-2 scale-75">
 
         {/* FORM TOP HEADER ------------------------------------------------------------------------------------------------ */}
-        <div id="form_top" className="mt-10 flex items-center justify-between pr-6 pl-0">
+        <div id="form_top" suppressHydrationWarning className="mt-10 flex items-center justify-between pr-6 pl-0">
           <span className="flex items-center justify-start space-x-4 -translate-x-3">
             <img src="/images/forms/Forms_Top_Left.png" className="w-6 h-20" />
             <h1 className="text-white text-2xl font-semibold">Sign In / Sign Up</h1>
@@ -58,7 +61,7 @@ const RegisterPage = ({ }) => {
           <img src="/images/forms/Forms_Top_Logo.png" className="w-[5.5rem] h-6 translate-y-1" />
         </div>
         {/* FORM MAIN -----------------------------------------------------------------------------------------------------  */}
-        <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col p-6 space-y-6 border-b-4 border-dotted border-white px-4'>
+        <form suppressHydrationWarning onSubmit={handleSubmit(onSubmit)} className='flex flex-col p-6 space-y-6 border-b-4 border-dotted border-white px-4'>
           {/* USERNAME */}
           <span className='flex flex-col'>
             <label htmlFor="username" className='absolute -translate-y-4 text-xl font-bold z-30 translate-x-4 text-white bg-[#F29AA7] px-2 '>Username</label>
@@ -87,13 +90,13 @@ const RegisterPage = ({ }) => {
             {errors.password && <p className='text-red-700 font-semibold text-2xl'>{errors.password.message}</p>}
           </span>
           {/* SUBMIT BUTTON  */}
-          <button type="submit" className="bg-white w-full text-[#F29AA7] text-2xl rounded-lg font-extrabold py-4 text-center hover:bg-pink-500 hover:text-white duration-300">Create an Account</button>
+          <button suppressHydrationWarning type="submit" className="bg-white w-full text-[#F29AA7] text-2xl rounded-lg font-extrabold py-4 text-center hover:bg-pink-500 hover:text-white duration-300">Create an Account</button>
         </form>
 
-        <button className="w-full text-center py-6 text-white text-2xl font-bold hover:scale-110 duration-300">Sign In</button>
+        <button suppressHydrationWarning className="w-full text-center py-6 text-white text-2xl font-bold hover:scale-110 duration-300">Sign In</button>
 
       </div>
-    </div>
+    </section>
   )
 }
 
