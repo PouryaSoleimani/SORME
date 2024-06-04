@@ -11,17 +11,17 @@ type ParamsType = { params: { id: string } }
 const SingleProductPage2 = async (params: ParamsType) => {
 
   const productID = params.params.id
-  const request = await fetch(`http://localhost:3000/products/${productID}`)
+  const request = await fetch(`http://localhost:3000/products/${productID}`, { cache: 'no-store' })
   const response = await request.json()
 
 
   return (
-    <>
+    <section className='overflow-hidden'>
       <Header />
       <BreadCrumb />
       <SingleProduct {...response} />
       <Footer />
-    </>
+    </section>
 
   )
 }
