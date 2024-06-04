@@ -9,7 +9,7 @@ import { FiEye } from "react-icons/fi";
 import { FiEyeOff } from "react-icons/fi";
 import { useRouter } from "next/navigation";
 import { useRecoilState } from "recoil";
-import { TOKEN, USERINFOS } from "@/app/Recoil/atoms";
+import { TOKEN, USERINFOS, isLoggedIn } from "@/app/Recoil/atoms";
 import toast, { Toaster } from 'react-hot-toast';
 import axios from 'axios'
 import Link from "next/link";
@@ -23,11 +23,13 @@ const LoginPage = ({ }) => {
   const [token, setToken] = useRecoilState(TOKEN)
   const [userEmail, setUserEmail] = useState("")
   const [userPassword, setUserPassword] = useState("")
+  const [ISLOGGEDIN, setISLOGGEDIN] = useRecoilState(isLoggedIn)
+
+  const router = useRouter()
 
   //^ TOAST
   const notify3 = () => toast.success('Logged In Successfully', { style: { border: '3px solid #F29AA7', padding: '10px', color: 'black', fontWeight: 'bold', fontSize: '16px', borderRadius: "10px" } })
   const notify4 = () => toast.error('Email or Password is Incorrect', { style: { border: '3px solid #F29AA7', padding: '10px', color: 'black', fontWeight: 'bold', fontSize: '16px', borderRadius: "10px" } })
-
 
   //^ YUP
   const schema = yup.object().shape({
@@ -43,6 +45,8 @@ const LoginPage = ({ }) => {
     console.log(data);
     reset()
     axios.post('http://localhost:3000/login', data).then(response => { console.log("OK", response); notify3() }).catch(error => { console.log("ERROR", error); notify4() })
+    setTimeout(() => { setISLOGGEDIN(true) }, 1000);
+    router.push('/')
   }
 
 
@@ -51,9 +55,7 @@ const LoginPage = ({ }) => {
   const toggleVisibility = () => setIsVisible(!isVisible);
 
 
-  // ROUTER
-  const router = useRouter()
-  function backToSignUp() { router.push('/register') }
+
 
   return (
     <div className="flex items-center justify-center w-screen h-screen overflow-hidden">

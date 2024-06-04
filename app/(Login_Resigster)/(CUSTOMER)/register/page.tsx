@@ -45,7 +45,6 @@ const RegisterPage = ({ }) => {
     setUserInfos(data)
     notify();
     reset();
-    setISLOGGEDIN(true)
     setTimeout(() => { router.push("/login") }, 1000);
   }
 
