@@ -1,5 +1,5 @@
 //^ SHOPPING CART ITEM ==============================================================================================================================================================
-// "use client"
+"use client"
 import React from 'react'
 import { Image } from "@nextui-org/image";
 import NextImage from "next/image";;
@@ -22,14 +22,14 @@ const ShoppingCartItem = ({ ...product }: SingleProductType) => {
 
   const [BAG, setBAG] = useRecoilState(SHOPPINGCART)
 
-
   function deleteHandler(product: SingleProductType) {
     const copy = [...BAG]
     const ID = product.id
-    const newBAG = copy.filter(product => { return product.id !== ID })
-    setBAG(newBAG)
+    const filteredBAG: SingleProductType[] | [] = copy.filter((item: SingleProductType) => { return item.id !== ID })
+    console.log('BAG', BAG)
+    console.log('FILTERED BAG', filteredBAG)
+    setBAG(filteredBAG)
   }
-
 
 
   return (
