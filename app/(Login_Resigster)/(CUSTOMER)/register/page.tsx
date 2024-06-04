@@ -60,7 +60,7 @@ const RegisterPage = ({ }) => {
 
       <div suppressHydrationWarning className="flex items-center justify-center w-screen h-screen">
         <Toaster position="top-right" reverseOrder={true} />
-        <div id="form_container" className="w-[33rem] h-fit bg-[#F29AA7] rounded-3xl flex flex-col px-2 scale-75">
+        <div id="form_container" className="w-[33rem] h-fit bg-[#F29AA7] rounded-3xl flex flex-col px-2 scale-95">
 
           {/* FORM TOP HEADER ------------------------------------------------------------------------------------------------ */}
           <div id="form_top" suppressHydrationWarning className="mt-10 flex items-center justify-between pr-6 pl-0">

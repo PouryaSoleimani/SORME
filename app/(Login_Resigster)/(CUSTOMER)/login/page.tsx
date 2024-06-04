@@ -30,7 +30,7 @@ const LoginPage = ({ }) => {
 
   return (
     <div className="flex items-center justify-center w-screen h-screen">
-      <div id="form_container" className="w-[33rem] h-fit bg-[#F29AA7] rounded-3xl flex flex-col px-2">
+      <div id="form_container" className="w-[33rem] h-fit bg-[#F29AA7] rounded-3xl flex flex-col px-2 scale-95">
 
         {/* FORM TOP HEADER ------------------------------------------------------------------------------------------------ */}
         <div id="form_top" className="mt-10 flex items-center justify-between pr-6 pl-0">
@@ -67,7 +67,7 @@ const LoginPage = ({ }) => {
           </span>
           {/* SUBMIT BUTTON  */}
           <div className="flex items-center justify-start space-x-1">
-            <button type="submit" className="bg-white w-full text-[#F29AA7] text-2xl rounded-lg font-extrabold py-4 text-center hover:bg-pink-500 hover:text-white duration-300">Create an Acquantity</button>
+            <button type="submit" className="bg-white w-full text-[#F29AA7] text-2xl rounded-lg font-extrabold py-4 text-center hover:bg-pink-500 hover:text-white duration-300">Create an Account</button>
             <button className="w-full text-white text-2xl rounded-lg font-extrabold py-4 text-center hover:scale-110 duration-300"> Forgot Password</button>
           </div>
         </form>
