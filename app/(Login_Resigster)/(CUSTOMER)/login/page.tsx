@@ -23,10 +23,12 @@ const LoginPage = ({ }) => {
   const [token, setToken] = useRecoilState(TOKEN)
   const [ISLOGGEDIN, setISLOGGEDIN] = useRecoilState(isLoggedIn)
   const router = useRouter()
+  const [isVisible, setIsVisible] = React.useState(false);
+  const toggleVisibility = () => setIsVisible(!isVisible);
 
   //^ TOAST
-  const notify3 = () => toast.success('Logged In Successfully', { style: { border: '3px solid #F29AA7', padding: '10px', color: 'black', fontWeight: 'bold', fontSize: '16px', borderRadius: "10px" } })
-  const notify4 = () => toast.error('Email or Password is Incorrect', { style: { border: '3px solid #F29AA7', padding: '10px', color: 'black', fontWeight: 'bold', fontSize: '16px', borderRadius: "10px" } })
+  const notify3 = () => toast.success('Logged In Successfully', { style: { border: '3px solid #F29AA7', padding: '10px', color: 'black', fontWeight: 'bold', fontSize: '12px', borderRadius: "10px" } })
+  const notify4 = () => toast.error('Email or Password is Incorrect', { style: { border: '3px solid #F29AA7', padding: '10px', color: 'black', fontWeight: 'bold', fontSize: '12px', borderRadius: "10px" } })
 
   //^ YUP
   const schema = yup.object().shape({
@@ -41,18 +43,16 @@ const LoginPage = ({ }) => {
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     console.log(data);
     reset()
-    axios.post('http://localhost:3000/login', data).then(response => { console.log("OK", response); notify3() }).catch(error => { console.log("ERROR", error); notify4() })
-    setTimeout(() => { setISLOGGEDIN(true) }, 1000);
-    router.push('/')
+    axios.post('http://localhost:3000/login', data).then(response => {
+      console.log("OK", response);
+      notify3()
+      setTimeout(() => { setISLOGGEDIN(true) }, 1000);
+      router.push('/')
+    }).catch(error => {
+      console.log("ERROR", error); notify4()
+    })
+
   }
-
-
-
-  const [isVisible, setIsVisible] = React.useState(false);
-  const toggleVisibility = () => setIsVisible(!isVisible);
-
-
-
 
   return (
     <div className="flex items-center justify-center w-screen h-screen overflow-hidden">
