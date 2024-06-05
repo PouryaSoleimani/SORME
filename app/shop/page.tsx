@@ -15,9 +15,10 @@ import { ALLPRODUCTS } from '../Recoil/atoms'
 type SingleProductType = { id: number, title: string, img: string, rating: number, views: number, price: number, seller: string, brand: string, off: boolean, offPercent: number, count: number }
 
 const Shop = () => {
-
   const [isClient, setIsClient] = useState(false)
   const [BAG, setBAG] = useRecoilState(ALLPRODUCTS)
+  const [Sort, setSort] = useState('')
+
   const request = () => fetch('http://localhost:3000/products', { cache: "no-store" }).then(response => { return response.json() }).then(data => setBAG(data))
 
   useEffect(() => { request() }, [])
