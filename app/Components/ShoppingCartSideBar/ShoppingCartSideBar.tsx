@@ -5,7 +5,6 @@ import { useRecoilState } from 'recoil'
 
 type SingleProductType = { id: number, title: string, img: string, rating: number, views: number, price: number, seller: string, brand: string, off: boolean, offPercent: number, count: number }
 
-// type TotalType = number | null
 
 const ShoppingCartSideBar = () => {
   const [BAG, setBAG] = useRecoilState(SHOPPINGCART)
