@@ -8,11 +8,11 @@ import { FaRegStar } from "react-icons/fa";
 import { v4 as uuidv4 } from 'uuid';
 import { TiHeartOutline } from "react-icons/ti";
 import { RiDeleteBinLine } from "react-icons/ri";
+import { useRecoilState } from 'recoil';
+import { SHOPPINGCART } from '@/app/Recoil/atoms';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import 'animate.css';
-import { useRecoilState } from 'recoil';
-import { SHOPPINGCART } from '@/app/Recoil/atoms';
 
 
 type SingleProductType = { id: number, title: string, img: string, rating: number, views: number, price: number, seller: string, brand: string, off: boolean, offPercent: number, count: number }
@@ -20,7 +20,7 @@ type SingleProductType = { id: number, title: string, img: string, rating: numbe
 const ShoppingCartItem = ({ ...product }: SingleProductType) => {
   AOS.init();
 
-  const [BAG, setBAG] = useRecoilState(SHOPPINGCART)
+  const [BAG, setBAG] = useRecoilState<SingleProductType[]>(SHOPPINGCART)
 
   function deleteHandler(product: SingleProductType) {
     const copy = [...BAG]

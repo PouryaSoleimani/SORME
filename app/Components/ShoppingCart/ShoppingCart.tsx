@@ -15,8 +15,7 @@ type SingleProductType = { id: number, title: string, img: string, rating: numbe
 const ShoppingCart = () => {
   AOS.init()
 
-  const [products, setProducts] = useRecoilState(SHOPPINGCART)
-
+  const [products, setProducts] = useRecoilState<SingleProductType[]>(SHOPPINGCART)
 
   return (
 
