@@ -56,6 +56,7 @@ const CustomerPanelSettingsPage = () => {
 
   return (
     <section suppressHydrationWarning className='overflow-x-hidden'>
+      <Toaster position="top-right" reverseOrder={true} />
       <PanelsHeader />
       <CustomerPanelsSideBar pathname={pathName} />
       <div className='ml-[25rem] mt-[10rem] -z-10 text-black bg-[#FFF0F3] rounded-2xl w-[50rem] h-[30rem] flex flex-col space-y-3 items-center justify-between space-x-4 pl-3 pr-4 py-4'>

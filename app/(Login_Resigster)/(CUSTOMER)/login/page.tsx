@@ -46,8 +46,10 @@ const LoginPage = ({ }) => {
     axios.post('http://localhost:3000/login', data).then(response => {
       console.log("OK", response);
       notify3()
+      setUserInfos(response.data.user)
+      setToken(response.data.accessToken)
       setTimeout(() => { setISLOGGEDIN(true) }, 1000);
-      router.push('/')
+      setTimeout(() => { router.push('/') }, 1500);
     }).catch(error => {
       console.log("ERROR", error); notify4()
     })
