@@ -13,7 +13,7 @@ import { useState } from 'react';
 type DataType = { id: number, title: string, price: number, img: string, rating: number, views: number, offPercent: number, quantity: number, count: number }
 
 //COMPONENT
-const props = (props: DataType) => {
+const SingleProductComponent = (props: DataType) => {
   const notify = () => toast.success('Product Added to Cart', { style: { border: '3px solid #F29AA7', padding: '10px', color: 'black', fontWeight: 'bold', fontSize: '10px', borderRadius: "10px" } })
 
   const [allPRODUCTS, setallPRODUCTS] = useRecoilState(ALLPRODUCTS)
@@ -35,20 +35,20 @@ const props = (props: DataType) => {
 
   return (
 
-    <div id="main" className='w-screen h-fit px-20 pt-6 mb-[5rem] flex flex-col flex-wrap flex-shrink ' suppressHydrationWarning  >
+    <div  id="main" className='w-full h-fit px-20 pt-6 mb-[5rem] flex flex-col flex-wrap flex-shrink' suppressHydrationWarning  >
       <Toaster position="top-right" reverseOrder={true} />
       {/* TOP SECTION */}
-      <span id="top" data-aos="fade-up" data-aos-duration="700" className='w-full h-fit py-4  flex items-center justify-start space-x-14'>
+      <span id="top" data-aos="fade-up" data-aos-duration="700" className='w-full h-fit py-4 flex items-center justify-start space-x-16'>
 
         <span id="top_left" className=' w-fit flex items-center justify-between space-x-6'>
           <span className='flex flex-col items-center justify-center space-y-5'>
             <img src="/images/single-product/Heart_Icon.png" className='w-16 h-16 cursor-pointer box-border hover:border-2 border-pink-500 rounded-xl hover:shadow-xl shadow-black ' />
             <img src="/images/single-product/Share_Icon.png" className='w-16 h-16 cursor-pointer hover:border-2 border-pink-500 rounded-xl hover:shadow-xl shadow-black' />
           </span>
-          <Image as={NextImage} isZoomed width={700} height={500} alt="Product #1" src={props.img} priority className='cursor-pointer w-[29rem] h-[29rem]' />
+          <Image suppressHydrationWarning as={NextImage} isZoomed width={700} height={500} alt="Product #1" src={props.img} priority className='cursor-pointer w-[29rem] h-[30rem]' />
         </span>
 
-        <span id="top_right" className='w-fit px-3 flex items-center justify-start' >
+        <span id="top_right" className='w-fit px-3 flex items-center justify-start scale-105' >
           <span id="product_details" className='bg-[#F29AA7]/10 border border-pink-300 rounded-3xl flex flex-col px-6 pt-5 pb-10 text-black text-2xl w-[43rem]'>
 
             <span id="productTitle_Container" className='flex flex-col items-start justify-center space-y-1'>
@@ -74,8 +74,8 @@ const props = (props: DataType) => {
       </span>
 
       {/* BOTTOM SECTION */}
-      <span id="buttom" className='flex items-center justify-start space-x-10 mt-6 px-16' >
-        <span id="buttom_left" data-aos="fade-right" data-aos-duration="700" className='bg-[#F29AA7]/10 border px-8 py-12 text-[#F29AA7] border-pink-300 rounded-3xl w-[29rem] text-[3.8rem] leading-4 font-bold flex flex-col items-center justify-center space-y-16'>
+      <span id="buttom" className='flex items-center justify-start space-x-16 mt-6 px-16' >
+        <span id="buttom_left" data-aos="fade-right" data-aos-duration="700" className='bg-[#F29AA7]/10 border px-8 py-12 text-[#F29AA7] border-pink-300 rounded-3xl w-[30rem] text-[3.8rem] leading-4 font-bold flex flex-col items-center justify-center space-y-16 scale-110'>
 
           <span id='buttom_left_top' className='flex items-center justify-center space-x-10'>
             <p id="before_price" className='text-[#F29AA7]/40 line-through decoration-[#F29AA7]'>{props.price}$</p>
@@ -87,7 +87,7 @@ const props = (props: DataType) => {
           </span>
         </span>
 
-        <span id="buttom_right" data-aos="fade-left" data-aos-duration="700" className='bg-[#F29AA7]/10 border py-12 text-[#F29AA7] border-pink-300 rounded-3xl w-[43.5rem]  font-semibold flex items-center justify-center space-x-2'>
+        <span id="buttom_right" data-aos="fade-left" data-aos-duration="700" className='bg-[#F29AA7]/10 border py-12 text-[#F29AA7] border-pink-300 rounded-3xl w-[45rem]  font-semibold flex items-center justify-center space-x-2'>
           <span id="buttom_right_left" className='flex flex-col items-center justify-center space-y-4 w-1/2 border-r-4 py-1 border-pink-400'>
             <span className='flex items-center justify-start space-x-2 text-black text-3xl'>
               <img src="/images/single-product/Shop_Icon.png" className='w-16 h-16 cursor-pointer box-border  border-pink-500 rounded-xl' />
@@ -113,4 +113,4 @@ const props = (props: DataType) => {
   )
 }
 
-export default props
+export default SingleProductComponent

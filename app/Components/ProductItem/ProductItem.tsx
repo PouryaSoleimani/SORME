@@ -16,7 +16,7 @@ import 'animate.css';
 const ProductItem = ({ ...product }) => {
   AOS.init();
   return (
-    <div id='ProductItemContainer' className='border-2 box-border border-zinc-300 rounded-xl pt-4 px-4 w-[28.2rem] h-[19rem] flex items-start justify-between space-x-6 hover:scale-110 cursor-pointer duration-300 hover:border-black animate__animated animate__pulse'>
+    <div suppressHydrationWarning  id='ProductItemContainer' className='border-2 box-border border-zinc-300 rounded-xl pt-4 px-4 w-[29.8rem] h-[19rem] flex items-start justify-between space-x-6 hover:scale-110 cursor-pointer duration-300 hover:border-black animate__animated animate__pulse'>
 
       <div id="left" className='flex flex-col items-center justify-start pl-4 h-fit '>
         <Image as={NextImage} isZoomed width={300} height={200} alt="Product #1" src={product.img} className='cursor-pointer w-[12rem] h-[14rem]' />
