@@ -7,6 +7,7 @@ import 'animate.css';
 import { useRecoilState } from 'recoil';
 import { ALLPRODUCTS } from '@/app/Recoil/atoms';
 import __ from 'lodash'
+
 type SingleProductType = { id: number, title: string, img: string, rating: number, views: number, price: number, seller: string, brand: string, off: boolean, offPercent: number, count: number }
 
 
