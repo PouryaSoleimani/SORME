@@ -13,6 +13,8 @@ const MiddleHeader = () => {
   const [ISLOGGEDIN, setISLOGGEDIN] = useRecoilState(isLoggedIn)
   const [userInfos, setUserInfos] = useRecoilState(USERINFOS)
 
+
+  
   return (
     <section suppressHydrationWarning className='max-w-screen h-fit px-20 py-2 flex items-center overflow-hidden justify-between  animate__animated animate__fadeInUp'>
 
