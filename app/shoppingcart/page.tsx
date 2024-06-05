@@ -1,4 +1,4 @@
-//^ SHOPPING CART PAGE
+//^ SHOPPING CART PAGE ===================================================================================================================================
 import React from 'react'
 import Header from '../Components/Header/Header'
 import BreadCrumb from '../Components/BreadCrumb/BreadCrumb'
@@ -12,7 +12,7 @@ import ShoppingCartSideBar from '../Components/ShoppingCartSideBar/ShoppingCartS
 const ShoppingCartPage = ({ }) => {
 
   return (
-    <>
+    <section className='overflow-hidden'>
       <Header />
       <BreadCrumb />
       <div className='flex items-start'>
@@ -20,7 +20,7 @@ const ShoppingCartPage = ({ }) => {
         <ShoppingCartSideBar />
       </div>
       <Footer />
-    </>
+    </section>
   )
 }
 

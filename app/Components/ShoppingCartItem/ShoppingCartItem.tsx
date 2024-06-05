@@ -26,8 +26,6 @@ const ShoppingCartItem = ({ ...product }: SingleProductType) => {
     const copy = [...BAG]
     const ID = product.id
     const filteredBAG: SingleProductType[] | [] = copy.filter((item: SingleProductType) => { return item.id !== ID })
-    console.log('BAG', BAG)
-    console.log('FILTERED BAG', filteredBAG)
     setBAG(filteredBAG)
   }
 
@@ -43,7 +41,7 @@ const ShoppingCartItem = ({ ...product }: SingleProductType) => {
         <div id="center" className='w-[5rem] h-inherit flex flex-col items-center justify-start space-y-4 translate-x-6 translate-y-2'>
           <TiHeartOutline className='w-14 h-14 bg-zinc-200 p-2 rounded-xl text-pink-400 hover:border-2 border-pink-400 duration-150' />
           <RiDeleteBinLine className='w-14 h-14 bg-zinc-200 p-3 rounded-xl text-red-700 hover:border-2 border-red-700 duration-150' onClick={() => deleteHandler(product)} />
-          <p className='w-14 h-14 bg-zinc-200 p-2 rounded-xl text-blue-700 flex flex-col items-center justify-center hover:border-2 border-blue-700 duration-150'> Count <span className='text-2xl font-bold'>{product.count} </span></p>
+          <p className='w-14 h-14 bg-zinc-200 p-2 rounded-xl text-blue-700 flex flex-col items-center justify-center hover:border-2 border-blue-700 duration-150'> Count <span className='text-2xl font-bold'>{product.count.toString()}</span></p>
           <p id="productPrice" className='text-pink-400 font-extrabold text-3xl '>{product.price * product.count}$</p>
         </div>
 
