@@ -7,6 +7,10 @@ import React from 'react'
 import { useForm, SubmitHandler } from "react-hook-form"
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+import { useRecoilState } from 'recoil'
+import { TOKEN, USERINFOS, isLoggedIn } from '@/app/Recoil/atoms'
+import toast, { Toaster } from 'react-hot-toast';
+import { useRouter } from 'next/navigation'
 
 type Inputs = { profile: string, currentPassword: string, fullName: string, newPassword: string, dateofBirth: string, confirmPassword: string, address: string }
 
@@ -16,6 +20,13 @@ const CustomerPanelSettingsPage = () => {
   const path = usePathname()
   const pathName = path.slice(16).toLocaleUpperCase()
   console.log(pathName)
+  const notify5 = () => toast.success('Logged Out Successfully', { style: { border: '3px solid #F29AA7', padding: '10px', color: 'black', fontWeight: 'bold', fontSize: '12px', borderRadius: "10px" } })
+
+  //? STATES
+  const [token, setToken] = useRecoilState(TOKEN)
+  const [userInfos, setUserInfos] = useRecoilState(USERINFOS)
+  const [ISLOGGEDIN, setISLOGGEDIN] = useRecoilState(isLoggedIn)
+  const router = useRouter()
 
   //YUP
   const schema = yup.object().shape({
@@ -33,8 +44,18 @@ const CustomerPanelSettingsPage = () => {
 
   const onSubmit: SubmitHandler<Inputs> = (data) => { console.log(data); reset() }
 
+  const logOutHandler = () => {
+    setToken('');
+    setUserInfos({})
+    notify5()
+    setTimeout(() => { setISLOGGEDIN(false) }, 1000);
+    setTimeout(() => { router.push('/') }, 2000);
+  }
+
+
+
   return (
-    <section className='overflow-x-hidden'>
+    <section suppressHydrationWarning className='overflow-x-hidden'>
       <PanelsHeader />
       <CustomerPanelsSideBar pathname={pathName} />
       <div className='ml-[25rem] mt-[10rem] -z-10 text-black bg-[#FFF0F3] rounded-2xl w-[50rem] h-[30rem] flex flex-col space-y-3 items-center justify-between space-x-4 pl-3 pr-4 py-4'>
@@ -123,7 +144,7 @@ const CustomerPanelSettingsPage = () => {
 
         </form>
         <div>
-        <button className='bg-white px-6 py-2 text-xl font-semibold rounded-xl hover:bg-pink-500 duration-500'>Log Out</button>
+          <button onClick={logOutHandler} className='bg-white px-6 py-2 text-xl font-semibold rounded-xl hover:bg-pink-500 duration-500'>Log Out</button>
         </div>
       </div>
     </section>

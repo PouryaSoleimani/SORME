@@ -4,21 +4,24 @@ import React, { useEffect, useState } from 'react'
 import { Skeleton } from "@nextui-org/skeleton";
 import Link from 'next/link';
 import 'animate.css';
+import { useRecoilState } from 'recoil';
+import { USERINFOS } from '@/app/Recoil/atoms';
 
 
 const CustomerPanelsSideBar: React.FC<{ pathname: string }> = ({ pathname }) => {
 
   const [selected, setSelected] = useState(pathname)
+  const [userInfos, setUserInfos] = useRecoilState(USERINFOS)
 
   useEffect(() => { console.log(selected) }, [selected])
 
   return (
-    <div className='overflow-x-hidden w-1/5 h-screen fixed left-0 top-0 pt-20 shadow-xl shadow-zinc-400 flex flex-col items-center justify-start space-y-6 z-10 animate__animated '>
+    <div suppressHydrationWarning className='overflow-x-hidden w-1/5 h-screen fixed left-0 top-0 pt-20 shadow-xl shadow-zinc-400 flex flex-col items-center justify-start space-y-6 z-10 animate__animated '>
       {/* TOP SIDEBAR */}
       <div id="top_sideBar" className="max-w-[300px] w-full flex flex-col justify-center items-center gap-2">
         <Skeleton className="flex rounded-full w-24 h-24" />
-        <h1 className='font-semibold'>Hardy Oppenheimer</h1>
-        <p className='text-zinc-500 -translate-y-2 tracking-tight'>Hardy.Oppenh@gmail.com</p>
+        <h1 className='font-semibold'>{userInfos.username}</h1>
+        <p className='text-zinc-500 -translate-y-2 tracking-tight'>{userInfos.email}</p>
       </div>
       {/* SIDEBAR LINKS */}
       <div className='flex flex-col items-start justify-end space-y-8 text-xl font-bold'>
