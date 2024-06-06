@@ -11,7 +11,7 @@ import Link from 'next/link';
 //COMPONENT
 const ButtomHeader = () => {
   return (
-    <section className='w-full px-16 flex items-start py-2 justify-between overflow-hidden animate__animated animate__fadeInUp'>
+    <section className='w-full px-16 flex items-start py-4 justify-between overflow-hidden animate__animated animate__fadeInUp'>
 
       {/* LEFT */}
       <div id="left" className='w-5/6 flex items-center justify-start space-x-10 text-md text-zinc-700 px-2'>
@@ -59,7 +59,7 @@ const ButtomHeader = () => {
 
       {/* RIGHT */}
       <div id="right" className='translate-x-10 pt-2 mr-[5rem] ' >
-        <button className='flex items-center justify-center hover:scale-105 duration-300 cursor-pointer'>Sorme Branches<img src="/images/icons/BranchesLogo.png" className='w-8 h-8 ml-2' /></button>
+        <button className='flex items-center justify-center hover:scale-105 duration-300 cursor-pointer text-sm font-semibold'>Sorme Branches<img src="/images/icons/BranchesLogo.png" className='w-8 h-8 ml-2' /></button>
       </div >
 
     </section >

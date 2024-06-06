@@ -20,7 +20,7 @@ const MiddleHeader = () => {
 
 
   return (
-    <section suppressHydrationWarning className='max-w-screen h-fit px-20 py-2 flex items-center overflow-hidden justify-between  animate__animated animate__fadeInUp'>
+    <section suppressHydrationWarning className='max-w-screen px-20 flex items-center overflow-hidden justify-between animate__animated animate__fadeInUp'>
       {/* LEFT */}
       <div id="left" className='flex items-center justify-center space-x-16'>
         <Link href='/'>
@@ -55,7 +55,7 @@ const MiddleHeader = () => {
         <Link href='/shoppingcart' className='px-4'>
           <span id='ShoppingCartButton' className='bg-zinc-200/70 rounded-lg'>
             <img src="/images/icons/HeaderShoppingCart.png" className='w-[35px] h-[35px] p-2 relative hover:scale-125 duration-300' />
-            <p className='absolute bg-[#F29AA7] text-white px-1 top-7 font-bold text-sm rounded-[100%]'>{BAG.length}</p>
+            <p className='absolute bg-[#F29AA7] text-white px-1 top-5 font-bold text-sm rounded-[100%]'>{BAG.length}</p>
           </span>
         </Link>
 

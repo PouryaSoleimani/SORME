@@ -23,8 +23,8 @@ const ProductsOrder = () => {
   }
   const sortDescending = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     const copy = [...BAG]
-    const sorted = copy.sort((a, b) => { return a.price + b.price })
-    setSort('Most Expensive')
+    const sorted = copy.sort((a, b) => { return a.price - b.price }).reverse()
+    setSort("Most Expensive")
     setBAG(sorted)
   }
 
