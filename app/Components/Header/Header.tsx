@@ -4,7 +4,7 @@ import TopHeader from './TopHeader'
 import MiddleHeader from './MiddleHeader'
 import ButtomHeader from './ButtomHeader'
 
-const Header: React.FC = () => {
+const Header = () => {
   return (
     <div className='overflow-hidden w-screen'>
       <TopHeader />

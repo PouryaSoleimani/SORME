@@ -15,8 +15,8 @@ const ShoppingCartPage = ({ }) => {
     <section className='overflow-hidden'>
       <Header />
       <BreadCrumb />
-      <div className='flex items-start'>
-        <ShoppingCart />
+      <div className='flex items-start py-2'>
+        <ShoppingCart />  
         <ShoppingCartSideBar />
       </div>
       <Footer />

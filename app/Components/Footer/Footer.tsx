@@ -38,7 +38,7 @@ const Footer = () => {
       </div>
 
       <div id="buttom" className='text-center text-sm py-2'>
-        <h3>All Material and Intellectual Rights of this Website are Reserved for "Sormeh" ©2020-2024</h3>
+        <h3 className='text-zinc-900'>All Material and Intellectual Rights of this Website are Reserved for "Sormeh" ©2020-2024</h3>
       </div>
     </div>
   )
