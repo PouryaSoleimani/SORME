@@ -1,7 +1,6 @@
 //^ ROOT LAYOUT PAGE
 import type { Metadata } from "next";
 import "./../css/globals.css";
-import PrelineScript from "./Components/PrelineScript";
 import RecoilRootWrapper from "./Recoil/RecoilRootWrapper";
 import { Providers } from "./providers";
 
