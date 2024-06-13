@@ -9,8 +9,6 @@
 
 .swiper-slide {
   text-align: center;
-  font-size: 14px;
-  color: black;
   padding: 0 4rem;
 }
 
@@ -23,11 +21,11 @@
 
 .swiper-button-prev {
   color: black;
-  font-weight: 900;
-  font-size: 10px;
+  font-weight: bolder;
 }
+
 .swiper-button-next {
   color: black;
-  font-weight: 900;
+  font-weight: bolder;
   font-size: 10px;
 }
