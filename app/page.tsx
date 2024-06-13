@@ -11,7 +11,7 @@ import ContactSupport from "./Components/ContactSupport/ContactSupport";
 import Footer from "./Components/Footer/Footer";
 
 //COMPONENT
-const Home= () => {
+const Home = () => {
   return (
     <>
       <div className="overflow-hidden">
