@@ -1,3 +1,4 @@
+"use client"
 // ^ HOME SWIPER COMPONENT
 import Image from 'next/image';
 import React from 'react'
@@ -15,7 +16,7 @@ const HomeSwiper = () => {
 
             <div className="hs-carousel-slide">
               <div className="flex justify-center h-full bg-gray-100 px-2 py-8 dark:bg-neutral-900">
-                <Image src='/images/swiper/SwiperSlide1.png' width='500' height='300' alt='Swiper Slide 1' priority  className='w-[90%] h-full rounded-3xl' />
+                <Image src='/images/swiper/SwiperSlide1.png' width='500' height='300' alt='Swiper Slide 1' priority className='w-[90%] h-full rounded-3xl' />
               </div>
             </div>
 

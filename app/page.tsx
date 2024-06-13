@@ -11,19 +11,21 @@ import ContactSupport from "./Components/ContactSupport/ContactSupport";
 import Footer from "./Components/Footer/Footer";
 
 //COMPONENT
-const Home: React.FC = () => {
+const Home= () => {
   return (
-    <span className="overflow-hidden">
-      <Header />
-      <HomeSwiper />
-      <HomeBoxes />
-      <HomeCarousel />
-      <TopBrands />
-      <HomeReviews />
-      <HomeOptions />
-      <ContactSupport />
-      <Footer />
-    </span>
+    <>
+      <div className="overflow-hidden">
+        <Header />
+        <HomeSwiper />
+        <HomeBoxes />
+        <HomeCarousel />
+        <TopBrands />
+        <HomeReviews />
+        <HomeOptions />
+        <ContactSupport />
+        <Footer />
+      </div>
+    </>
   )
 }
 
