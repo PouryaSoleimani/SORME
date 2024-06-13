@@ -16,7 +16,7 @@ const ShoppingCartPage = ({ }) => {
       <Header />
       <BreadCrumb />
       <div className='flex items-start py-2'>
-        <ShoppingCart />  
+        <ShoppingCart />
         <ShoppingCartSideBar />
       </div>
       <Footer />
