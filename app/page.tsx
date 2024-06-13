@@ -13,7 +13,7 @@ import Footer from "./Components/Footer/Footer";
 //COMPONENT
 const Home: React.FC = () => {
   return (
-    <div className="overflow-hidden">
+    <span className="overflow-hidden">
       <Header />
       <HomeSwiper />
       <HomeBoxes />
@@ -23,7 +23,7 @@ const Home: React.FC = () => {
       <HomeOptions />
       <ContactSupport />
       <Footer />
-    </div>
+    </span>
   )
 }
 
