@@ -10,7 +10,7 @@ import __ from 'lodash'
 
 type SingleProductType = { id: number, title: string, img: string, rating: number, views: number, price: number, seller: string, brand: string, off: boolean, offPercent: number, count: number }
 
-
+//COMPONENT
 const ProductsOrder = () => {
   const [sort, setSort] = useState('')
   const [BAG, setBAG] = useRecoilState(ALLPRODUCTS)
