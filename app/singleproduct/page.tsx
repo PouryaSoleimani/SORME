@@ -1,9 +1,10 @@
 //^ SINGLE PRODUCT PAGE MAIN =======================================================================================================================================
 import React from 'react'
-import Header from '../Components/Header/Header'
 import BreadCrumb from '../Components/BreadCrumb/BreadCrumb'
 import Footer from '../Components/Footer/Footer'
+import Header from '../Components/Header/Header'
 import SingleProductComponent from '../Components/SingleProduct/SingleProductComponent'
+import 'aos/dist/aos.css';
 
 type ParamsType = { params: { id: string } }
 
