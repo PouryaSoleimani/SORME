@@ -37,7 +37,6 @@
     "recoil": "^0.7.7",
     "recoil-persist": "^5.1.0",
     "server-only": "^0.0.1",
-    "shark": "^2.3.0",
     "sharp": "^0.33.4",
     "swiper": "^11.1.4",
     "tailwind-merge": "^2.3.0",
