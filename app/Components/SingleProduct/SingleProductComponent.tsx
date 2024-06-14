@@ -13,10 +13,11 @@ type DataType = { id: number, title: string, price: number, img: string, rating:
 
 //COMPONENT
 const SingleProductComponent = (props: DataType) => {
-  
+
   const notify = () => toast.success('Product Added to Cart', { style: { border: '3px solid #F29AA7', padding: '10px', color: 'black', fontWeight: 'bold', fontSize: '10px', borderRadius: "10px" } })
 
   const [allPRODUCTS, setallPRODUCTS] = useRecoilState(ALLPRODUCTS)
+
   const [BAG, setBAG] = useRecoilState(SHOPPINGCART)
 
   function addToCartHandler() {
@@ -64,7 +65,7 @@ const SingleProductComponent = (props: DataType) => {
               <h3 className='font-semibold'>Product Rating</h3>
 
               <span id='ratingStart' className='px-4 h-fit flex items-center justify-center'>
-                {Array(props.rating).fill(0).map(rate => (<FaStar className='text-yellow-300 w-10 h-12' key={uuidv4()} />))}{Array(5 - props.rating).fill(0).map(rate => (<FaRegStar key={uuidv4()} className='text-yellow-300 w-10 h-12' />))}
+                {Array(Number(props.rating)).fill(0).map(rate => (<FaStar className='text-yellow-300 w-10 h-12' key={uuidv4()} />))} {Array(Number(5 - props.rating)).fill(0).map(rate => (<FaRegStar key={uuidv4()} className='text-yellow-300 w-10 h-12' />))}
               </span>
               <p className='text-xl'>{props.views} People</p>
             </span>
