@@ -8,12 +8,14 @@ import 'aos/dist/aos.css';
 import { useRecoilState } from 'recoil';
 import { ALLPRODUCTS, SHOPPINGCART } from '@/app/Recoil/atoms';
 import { v4 as uuidv4 } from 'uuid';
+import Aos from 'aos';
 
 type DataType = { id: number, title: string, price: number, img: string, rating: number, views: number, offPercent: number, quantity: number, count: number }
 
 //COMPONENT
 const SingleProductComponent = (props: DataType) => {
-
+  Aos.init()
+  
   const notify = () => toast.success('Product Added to Cart', { style: { border: '3px solid #F29AA7', padding: '10px', color: 'black', fontWeight: 'bold', fontSize: '10px', borderRadius: "10px" } })
 
   const [allPRODUCTS, setallPRODUCTS] = useRecoilState(ALLPRODUCTS)
