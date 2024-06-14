@@ -4,6 +4,8 @@ import Footer from '@/app/Components/Footer/Footer'
 import Header from '@/app/Components/Header/Header'
 import SingleProduct from '@/app/Components/SingleProduct/SingleProduct'
 
+
+
 type ParamsType = { params: { id: string } }
 
 
