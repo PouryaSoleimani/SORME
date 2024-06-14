@@ -1,4 +1,4 @@
-//^ SINGLE PRODUCT COMPONENT
+//^ SINGLE PRODUCT COMPONENT ======================================================================================================================================
 "use client"
 import NextImage from 'next/image'
 import { Image } from '@nextui-org/react'
