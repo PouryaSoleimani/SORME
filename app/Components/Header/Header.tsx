@@ -1,15 +1,17 @@
 //^ HEADER =======================================================================================================================================================s
 import React from 'react'
-import TopHeader from './TopHeader'
-import MiddleHeader from './MiddleHeader'
-import ButtomHeader from './ButtomHeader'
+import dynamic from 'next/dynamic'
+const DynamicTopHeader = dynamic(() => import('./TopHeader'), { ssr: false, })
+const DynamicMiddleHeader = dynamic(() => import('./MiddleHeader'), { ssr: false, })
+const DynamicButtomHeader = dynamic(() => import('./ButtomHeader'), { ssr: false, })
+
 
 const Header = () => {
   return (
     <div className='overflow-hidden w-screen'>
-      <TopHeader />
-      <MiddleHeader />
-      <ButtomHeader />
+      <DynamicTopHeader />
+      <DynamicMiddleHeader />
+      <DynamicButtomHeader />
     </div>
   )
 }
