@@ -4,23 +4,23 @@ import Footer from '@/app/Components/Footer/Footer'
 import Header from '@/app/Components/Header/Header'
 import SingleProduct from '@/app/Components/SingleProduct/SingleProduct'
 
-
-
 type ParamsType = { params: { id: string } }
-
 
 const SingleProductPage2 = async (params: ParamsType) => {
 
   const productID = params.params.id
-  const request = await fetch(`http://localhost:3000/products/${productID}`, { cache: 'force-cache' })
+
+  const request = await fetch(`http://localhost:3000/products/${productID}`, { cache: 'default' })
   const response = await request.json()
+  console.log(response)
+
 
 
   return (
     <section suppressHydrationWarning className='overflow-hidden'>
       <Header />
       <BreadCrumb />
-      <SingleProduct suppressHydrationWarning {...response} />
+      <SingleProduct  {...response} />
       <Footer />
     </section>
 

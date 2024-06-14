@@ -13,6 +13,7 @@ type DataType = { id: number, title: string, price: number, img: string, rating:
 
 //COMPONENT
 const SingleProductComponent = (props: DataType) => {
+  
   const notify = () => toast.success('Product Added to Cart', { style: { border: '3px solid #F29AA7', padding: '10px', color: 'black', fontWeight: 'bold', fontSize: '10px', borderRadius: "10px" } })
 
   const [allPRODUCTS, setallPRODUCTS] = useRecoilState(ALLPRODUCTS)

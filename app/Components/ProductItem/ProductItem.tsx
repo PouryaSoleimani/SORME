@@ -11,12 +11,12 @@ import 'aos/dist/aos.css';
 import 'animate.css';
 
 
+type Props = { id: number, title: string, img: string, rating: number, views: number, price: number, seller: string, brand: string, off: boolean, offPercent: number, count: number }
 
-
-const ProductItem = ({ ...product }) => {
+const ProductItem: React.FC<Props> = ({ ...product }) => {
   AOS.init();
   return (
-    <div suppressHydrationWarning  id='ProductItemContainer' className='border-2 box-border border-zinc-300 rounded-xl pt-4 px-4 w-[27.5rem] h-[19rem] flex items-start justify-between space-x-6 hover:scale-110 cursor-pointer duration-300 hover:border-black animate__animated animate__pulse'>
+    <div suppressHydrationWarning id='ProductItemContainer' className='border-2 box-border border-zinc-300 rounded-xl pt-4 px-4 w-[27.5rem] h-[19rem] flex items-start justify-between space-x-6 hover:scale-110 cursor-pointer duration-300 hover:border-black animate__animated animate__pulse'>
 
       <div id="left" className='flex flex-col items-center justify-start pl-4 h-fit '>
         <Image as={NextImage} isZoomed width={300} height={200} alt="Product #1" src={product.img} className='cursor-pointer w-[12rem] h-[14rem]' />
