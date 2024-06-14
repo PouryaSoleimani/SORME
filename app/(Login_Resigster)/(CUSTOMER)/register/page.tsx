@@ -35,7 +35,7 @@ const RegisterPage = ({ }) => {
   //&REACT-HOOK-FORM
   const { register, handleSubmit, formState: { errors }, reset } = useForm<Inputs>({ resolver: yupResolver(schema) })
   const sendData = (data: {}) => {
-    axios.post('http://localhost:3000/users', data)
+    axios.post('http://localhost:5000/users', data)
       .then((response) => { console.log(response); setToken(response.data.accessToken); localStorage.setItem('user', response.data.accessToken) }).catch(error => { console.log(error); notify2() })
   }
   //*SUBMIT HANDLER

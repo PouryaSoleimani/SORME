@@ -25,7 +25,7 @@ const TestPage = () => {
 
   function deleteUser(event: React.FormEvent<HTMLFormElement>, id: number) {
     event.preventDefault()
-    axios.delete(`http://localhost:3000/users/${id}`).then(response => console.log(response))
+    axios.delete(`http://localhost:5000/users/${id}`).then(response => console.log(response))
     setUserID('')
   }
 

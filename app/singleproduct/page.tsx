@@ -11,7 +11,7 @@ type ParamsType = { params: { id: string } }
 const SingleProductPage = async (params: ParamsType) => {
 
   const productID = params.params.id
-  const request = await fetch(`http://localhost:3000/products/${productID}`, { cache: 'no-store' })
+  const request = await fetch(`http://localhost:5000/products/${productID}`, { cache: 'no-store' })
   const response = await request.json()
 
   return (

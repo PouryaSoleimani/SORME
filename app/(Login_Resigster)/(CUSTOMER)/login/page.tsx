@@ -43,7 +43,7 @@ const LoginPage = ({ }) => {
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     console.log(data);
     reset()
-    axios.post('http://localhost:3000/login', data).then(response => {
+    axios.post('http://localhost:5000/login', data).then(response => {
       console.log("OK", response);
       notify3()
       setUserInfos(response.data.user)

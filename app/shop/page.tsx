@@ -21,7 +21,7 @@ const Shop = () => {
   const [BAG, setBAG] = useRecoilState(ALLPRODUCTS)
 
   // REQUEST
-  const request = () => fetch('http://localhost:3000/products', { cache: "no-store" }).then(response => { return response.json() }).then(data => setBAG(data))
+  const request = () => fetch('http://localhost:5000/products', { cache: "no-store" }).then(response => { return response.json() }).then(data => setBAG(data))
   useEffect(() => { request() }, [])
   useEffect(() => { setIsClient(true) }, [])
 
