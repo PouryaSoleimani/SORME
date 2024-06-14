@@ -6,22 +6,20 @@ import BreadCrumb from '../Components/BreadCrumb/BreadCrumb'
 import Footer from '../Components/Footer/Footer'
 import SingleProduct from '../Components/SingleProduct/SingleProduct'
 
+type ParamsType = { params: { id: string } }
 
+const SingleProductPage = async (params: ParamsType) => {
 
-
-const SingleProductPage = () => {
-
-
-
+  const productID = params.params.id
+  const request = await fetch(`http://localhost:3000/products/${productID}`, { cache: 'force-cache' })
+  const response = await request.json()
   return (
-
     <section suppressHydrationWarning className='overflow-hidden'>
       <Header />
       <BreadCrumb />
-      {/* <SingleProduct /> */}
+      <SingleProduct suppressHydrationWarning {...response} />
       <Footer />
     </section>
-
   )
 }
 

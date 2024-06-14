@@ -8,7 +8,6 @@ import 'aos/dist/aos.css';
 import { useRecoilState } from 'recoil';
 import { ALLPRODUCTS, SHOPPINGCART } from '@/app/Recoil/atoms';
 import { v4 as uuidv4 } from 'uuid';
-import { useState } from 'react';
 
 type DataType = { id: number, title: string, price: number, img: string, rating: number, views: number, offPercent: number, quantity: number, count: number }
 
@@ -35,7 +34,7 @@ const SingleProductComponent = (props: DataType) => {
 
   return (
 
-    <div  id="main" className='w-full h-fit px-20 pt-6 mb-[5rem] flex flex-col flex-wrap flex-shrink' suppressHydrationWarning  >
+    <div id="main" className='w-full h-fit px-20 pt-6 mb-[5rem] flex flex-col flex-wrap flex-shrink' suppressHydrationWarning  >
       <Toaster position="top-right" reverseOrder={true} />
       {/* TOP SECTION */}
       <span id="top" data-aos="fade-up" data-aos-duration="700" className='w-full h-fit py-4 flex items-center justify-start space-x-16'>
