@@ -11,7 +11,7 @@ import 'animate.css';
 import { useRecoilState } from 'recoil'
 import { ALLPRODUCTS } from '../Recoil/atoms'
 import './../Components/ProductsOrder/ProductsOrder.css'
-import { Button } from "@nextui-org/react";
+import dynamic from 'next/dynamic'
 
 
 type SingleProductType = { id: number, title: string, img: string, rating: number, views: number, price: number, seller: string, brand: string, off: boolean, offPercent: number, count: number }
@@ -20,7 +20,6 @@ const Shop = () => {
   // STATES
   const [isClient, setIsClient] = useState(false)
   const [BAG, setBAG] = useRecoilState(ALLPRODUCTS)
-  const [sort, setSort] = useState('')
 
   // REQUEST
   const request = () => fetch('http://localhost:3000/products', { cache: "no-store" }).then(response => { return response.json() }).then(data => setBAG(data))
@@ -51,5 +50,3 @@ const Shop = () => {
 
 export default Shop
 
-
-// 
