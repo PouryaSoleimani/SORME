@@ -18,13 +18,13 @@ const SingleProductComponent = (props: DataType) => {
 
   useLayoutEffect(() => { Aos.init() }, [Aos])
 
-
   const notify = () => toast.success('Product Added to Cart', { style: { border: '3px solid #F29AA7', padding: '10px', color: 'black', fontWeight: 'bold', fontSize: '10px', borderRadius: "10px" } })
 
   const [allPRODUCTS, setallPRODUCTS] = useRecoilState(ALLPRODUCTS)
 
   const [BAG, setBAG] = useRecoilState(SHOPPINGCART)
 
+  //FUNCTIONS
   function addToCartHandler() {
     notify()
     setBAG((prevProducts: DataType[] | []) => {
@@ -39,6 +39,7 @@ const SingleProductComponent = (props: DataType) => {
     })
   }
 
+  //RETURN
   return (
 
     <div id="main" className='w-full h-fit px-20 pt-6 mb-[5rem] flex flex-col flex-wrap flex-shrink' suppressHydrationWarning  >
