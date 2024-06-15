@@ -5,12 +5,13 @@ import React, { useEffect } from 'react'
 import 'animate.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Aos from 'aos';
 
 
 
 const HomeBoxes = () => {
   useEffect(() => { AOS.init() }, [])
-
+  Aos.init()
   return (
     <span data-aos="zoom-in-up" data-aos-duration="400" data-aos-easing="linear" className='flex items-center justify-around space-x-16 flex-grow py-10 px-24'>
       <Image isZoomed src='/images/Home4Boxes/Box1.png' width={500} height={500} alt='Home-Boxes_Box1' className='rounded-2xl' />
