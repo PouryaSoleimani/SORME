@@ -26,7 +26,7 @@ const ContactSupport = () => {
 
   //RETURN
   return (
-    <div className='flex items-start justify-between px-20 w-full py-16 space-x-32' data-aos="zoom-in" data-aos-duration="700" data-aos-easing="linear">
+    <div className='flex items-start justify-between px-20 w-full py-16 space-x-32' data-aos="zoom-in" data-aos-duration="400" data-aos-easing="linear">
 
       <div id="left" className='flex flex-col items-start justify-start space-y-12'>
         <div className='flex flex-col space-y-5'>

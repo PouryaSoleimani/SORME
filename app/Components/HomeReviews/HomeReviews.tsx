@@ -5,7 +5,7 @@ import 'aos/dist/aos.css';
 
 const HomeReviews = () => {
   return (
-    <div className='flex items-center justify-center my-10 space-x-20 px-20' data-aos="zoom-out-up" data-aos-duration="600" data-aos-easing="linear">
+    <div className='flex items-center justify-center my-10 space-x-20 px-20' data-aos="zoom-out-up" data-aos-duration="400" data-aos-easing="linear">
       <HomeReviewItem src='/images/reviews/Review1.png' />
       <HomeReviewItem src='/images/reviews/Review2.png' />
       <HomeReviewItem src='/images/reviews/Review3.png' />

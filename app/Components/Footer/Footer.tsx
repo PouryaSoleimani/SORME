@@ -5,7 +5,7 @@ import 'aos/dist/aos.css';
 
 const Footer = () => {
   return (
-    <div className='py-4 px-20 bg-pink-100 overflow-hidden' data-aos="fade-up" data-aos-duration="600">
+    <div className='py-4 px-20 bg-pink-100 overflow-hidden' data-aos="fade-up" data-aos-duration="400">
 
       <div id="top" className='flex items-center justify-between w-full'>
         <Link href='/'>

@@ -7,7 +7,7 @@ import 'aos/dist/aos.css';
 const HomeCarousel = () => {
 
   return (
-    <div id='CarouselWrapper' className='flex items-center justify-center py-8 px-[5rem] h-[22rem]' data-aos="fade-up" data-aos-duration="800" data-aos-easing="linear">
+    <div id='CarouselWrapper' className='flex items-center justify-center py-8 px-[5rem] h-[22rem]' data-aos="fade-up" data-aos-duration="400" data-aos-easing="linear">
       <div id="Carousel" className='bg-[#F29AA7] w-full h-full rounded-3xl flex items-center justify-start z-50 overflow-hidden relative'>
 
         {/* LEFT DIV */}
