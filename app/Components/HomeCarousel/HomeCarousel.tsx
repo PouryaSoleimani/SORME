@@ -11,14 +11,14 @@ const HomeCarousel = () => {
       <div id="Carousel" className='bg-[#F29AA7] w-full h-full rounded-3xl flex items-center justify-start z-50 overflow-hidden relative'>
 
         {/* LEFT DIV */}
-        <div id="left" className='flex items-center justify-center space-x-2 py-[6rem] px-10 h-full'>
+        <div id="left" className='flex items-center justify-center space-x-2 py-[6rem] px-10 h-full w-1/5'>
           <Image src='/images/carousel/Left_1.png' width={500} height={500} alt='Carousel_Left_img_1' className='w-fit h-[16rem]' />
           <Image src='/images/carousel/Left_2.png' width={500} height={500} alt='Carousel_Left_img_2' className='w-fit h-[11rem]' />
         </div>
 
 
         {/* RIGHT DIV */}
-        <div id="right" className='flex items-center justify-start bg-zinc-100 rounded-3xl px-2 py-1.5 translate-x-6 overflow-hidden absolute right-0'>
+        <div id="right" className='flex items-center justify-start bg-zinc-100 rounded-3xl px-2 py-1.5 translate-x-6 overflow-hidden absolute right-0 w-4/5'>
           <HomeCarouselItem src="/images/carousel/Right_1.png" />
           <HomeCarouselItem src="/images/carousel/Right_2.png" />
           <HomeCarouselItem src="/images/carousel/Right_3.png" />
