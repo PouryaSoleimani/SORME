@@ -25,7 +25,7 @@ const Shop = () => {
   useEffect(() => { request() }, [])
   useEffect(() => { setIsClient(true) }, [])
 
-  // FUNCTIONS
+  // FUNCTIONS  
 
 
   return (
