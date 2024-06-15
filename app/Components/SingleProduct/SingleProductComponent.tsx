@@ -42,7 +42,7 @@ const SingleProductComponent = (props: DataType) => {
   //RETURN
   return (
 
-    <div id="main" className='w-full h-fit px-20 pt-6 mb-[5rem] flex flex-col flex-wrap flex-shrink' suppressHydrationWarning  >
+    <div id="main" className='w-full h-fit px-20 pt-6 mb-[5rem] flex flex-col flex-wrap flex-shrink'   >
       <Toaster position="top-right" reverseOrder={true} />
       {/* TOP SECTION */}
       <span id="top" data-aos="fade-up" data-aos-duration="700" className='w-full h-fit py-4 flex items-center justify-start space-x-16'>
@@ -52,7 +52,7 @@ const SingleProductComponent = (props: DataType) => {
             <img src="/images/single-product/Heart_Icon.png" className='w-16 h-16 cursor-pointer box-border hover:border-2 border-pink-500 rounded-xl hover:shadow-xl shadow-black ' />
             <img src="/images/single-product/Share_Icon.png" className='w-16 h-16 cursor-pointer hover:border-2 border-pink-500 rounded-xl hover:shadow-xl shadow-black' />
           </span>
-          <Image suppressHydrationWarning as={NextImage} isZoomed width={700} height={500} alt="Product #1" src={props.img} priority className='cursor-pointer w-[29rem] h-[30rem]' />
+          <Image as={NextImage} isZoomed width={700} height={500} alt="Product #1" src={props.img} priority className='cursor-pointer w-[29rem] h-[30rem]' />
         </span>
 
         <span id="top_right" className='w-fit px-3 flex items-center justify-start scale-105' >
