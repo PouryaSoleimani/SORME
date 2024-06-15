@@ -18,7 +18,7 @@ const SingleProductPage2 = async (params: ParamsType) => {
 
   return (
     <section className='overflow-hidden'>
-      <Header />  
+      <Header />
       <BreadCrumb />
       <SingleProductDynamic {...response} />
       <Footer />
