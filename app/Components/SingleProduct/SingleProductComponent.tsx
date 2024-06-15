@@ -9,13 +9,16 @@ import { useRecoilState } from 'recoil';
 import { ALLPRODUCTS, SHOPPINGCART } from '@/app/Recoil/atoms';
 import { v4 as uuidv4 } from 'uuid';
 import Aos from 'aos';
+import { useLayoutEffect } from 'react';
 
 type DataType = { id: number, title: string, price: number, img: string, rating: number, views: number, offPercent: number, quantity: number, count: number }
 
 //COMPONENT
 const SingleProductComponent = (props: DataType) => {
-  Aos.init()
-  
+
+  useLayoutEffect(() => { Aos.init() }, [Aos])
+
+
   const notify = () => toast.success('Product Added to Cart', { style: { border: '3px solid #F29AA7', padding: '10px', color: 'black', fontWeight: 'bold', fontSize: '10px', borderRadius: "10px" } })
 
   const [allPRODUCTS, setallPRODUCTS] = useRecoilState(ALLPRODUCTS)
