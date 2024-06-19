@@ -11,3 +11,4 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ![Screenshot 2024-06-13 at 10-53-50 SORME IR](https://github.com/PouryaSoleimani/SORME/assets/159859200/aab3f93a-411c-4091-ad2d-ac31fb02e9c9)
 ![Screenshot 2024-06-13 at 10-54-31 SORME IR](https://github.com/PouryaSoleimani/SORME/assets/159859200/b1a368bc-e4d8-449f-b3da-639f92d6e916)
 ![Screenshot 2024-06-13 at 10-54-39 SORME IR](https://github.com/PouryaSoleimani/SORME/assets/159859200/d6b5dc3f-726a-4fc5-8e39-a0c246c3472b)
+![Screenshot 2024-06-13 at 10-54-56 SORME IR](https://github.com/PouryaSoleimani/SORME/assets/159859200/c503c6ac-f84e-4545-8ea7-26dda8747a78)
