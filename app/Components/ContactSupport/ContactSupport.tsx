@@ -56,7 +56,7 @@ const ContactSupport = () => {
             {errors.message && <p className='text-red-700 font-semibold'>{errors.message.message}</p>}
           </div>
 
-          <button type="submit" className='bg-[#F29AA7] duration-500 px-8 py-1 w-fit mx-auto text-3xl rounded-xl hover:bg-pink-600 text-zinc-100 font-bold'>Send</button>
+          <button type="submit" className='bg-[#F29AA7] w-full duration-500 px-8 py-2 mx-auto text-3xl rounded-lg hover:bg-pink-600 text-zinc-100 font-bold'>Send</button>
         </form>
 
       </div>
