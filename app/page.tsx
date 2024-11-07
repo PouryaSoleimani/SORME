@@ -1,4 +1,5 @@
 //^ HOME PAGE
+"use client"
 import React from 'react'
 import Header from "./Components/Header/Header";
 import HomeSwiper from "./Components/HomeSwiper/HomeSwiper";
@@ -14,7 +15,7 @@ import Footer from "./Components/Footer/Footer";
 const Home = () => {
   return (
     <>
-      <div className="overflow-hidden">
+      <div className="overflow-hidden max-w-[1580px] mx-auto">
         <Header />
         <HomeSwiper />
         <HomeBoxes />

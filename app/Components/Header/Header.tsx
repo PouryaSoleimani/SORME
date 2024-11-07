@@ -1,4 +1,5 @@
 //^ HEADER =======================================================================================================================================================s
+"use client"
 import React from 'react'
 import dynamic from 'next/dynamic'
 const DynamicTopHeader = dynamic(() => import('./TopHeader'), { ssr: false, })
