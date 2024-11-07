@@ -16,8 +16,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
 
   return (
     <RecoilRootWrapper>
-      <html lang="en">
-        <body>
+      <html lang="en" className="max-w-[1580px] mx-auto">
+        <body className="max-w-[1580px] mx-auto">
           <Providers>
             {children}
           </Providers>
