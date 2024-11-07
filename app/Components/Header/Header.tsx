@@ -9,7 +9,7 @@ const DynamicButtomHeader = dynamic(() => import('./ButtomHeader'), { ssr: false
 
 const Header = () => {
   return (
-    <div className='overflow-hidden w-screen'>
+    <div className='overflow-hidden w-full'>
       <DynamicTopHeader />
       <DynamicMiddleHeader />
       <DynamicButtomHeader />

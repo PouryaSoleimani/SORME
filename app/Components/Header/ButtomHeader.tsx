@@ -48,18 +48,18 @@ const ButtomHeader = () => {
         </Dropdown>
 
         <span className='flex items-center justify-start space-x-4 text-md'>
-          <Link href='/shop' className='flex items-center justify-center cursor-pointer hover:scale-105 duration-300'>Brands <img src="/images/icons/BrandsLogo.png" className='w-9 h-9 ml-2' /></Link>
-          <Link href='/shop' className='flex items-center justify-center cursor-pointer hover:scale-105 duration-300'>Organizational <img src="/images/icons/OrganizationalLogo.png" className='w-8 h-8 ml-2' /></Link>
-          <Link href='/shop' className='flex items-center justify-center cursor-pointer hover:scale-105 duration-300'>Counseling <img src="/images/icons/CounselingLogo.png" className='w-8 h-8 ml-2' /></Link>
-          <Link href='/shop' className='flex items-center justify-center cursor-pointer hover:scale-105 duration-300'>Gift Card <img src="/images/icons/GiftCardLogo.png" className='w-7 h-7 ml-2' /></Link>
-          <Link href='/shop' className='flex items-center justify-center cursor-pointer hover:scale-105 duration-300'>Web Blog <img src="/images/icons/weblogLogo.png" className='w-7 h-7 ml-2' /></Link>
+          <Link href='/shop' className='flex items-center justify-center cursor-pointer hover:scale-105 duration-300'>Brands <img src="/images/icons/BrandsLogo.png" className='w-6 h-6 ml-2' /></Link>
+          <Link href='/shop' className='flex items-center justify-center cursor-pointer hover:scale-105 duration-300'>Organizational <img src="/images/icons/OrganizationalLogo.png" className='w-5 h-5 ml-2' /></Link>
+          <Link href='/shop' className='flex items-center justify-center cursor-pointer hover:scale-105 duration-300'>Counseling <img src="/images/icons/CounselingLogo.png" className='w-5 h-5 ml-2' /></Link>
+          <Link href='/shop' className='flex items-center justify-center cursor-pointer hover:scale-105 duration-300'>Gift Card <img src="/images/icons/GiftCardLogo.png" className='w-4 h-4 ml-2' /></Link>
+          <Link href='/shop' className='flex items-center justify-center cursor-pointer hover:scale-105 duration-300'>Web Blog <img src="/images/icons/weblogLogo.png" className='w-4 h-4 ml-2' /></Link>
         </span >
       </div >
 
 
       {/* RIGHT */}
       <div id="right" className='translate-x-10 pt-2 mr-[5rem] ' >
-        <button className='flex items-center justify-center hover:scale-105 duration-300 cursor-pointer text-sm font-semibold'>Sorme Branches<img src="/images/icons/BranchesLogo.png" className='w-8 h-8 ml-2' /></button>
+        <button className='flex items-center justify-center hover:scale-105 duration-300 cursor-pointer text-sm font-semibold whitespace-nowrap'>Sorme Branches<img src="/images/icons/BranchesLogo.png" className='w-6 h-6 ml-2' /></button>
       </div >
 
     </section >
