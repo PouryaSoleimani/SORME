@@ -20,7 +20,7 @@ const MiddleHeader = () => {
 
 
   return (
-    <section suppressHydrationWarning className='max-w-screen px-20 flex items-center overflow-hidden justify-between animate__animated animate__fadeInUp'>
+    <section suppressHydrationWarning className='max-w-screen whitespace-nowrap px-20 flex items-center overflow-hidden justify-between animate__animated animate__fadeInUp'>
       {/* LEFT */}
       <div id="left" className='flex items-center justify-center space-x-16'>
         <Link href='/'>
@@ -38,7 +38,7 @@ const MiddleHeader = () => {
 
         <Link href='/seller-panel' className='px-4'>
           <span className='px-4'>
-            <button id='SellerButton' className='border border-black rounded-md flex p-1 space-x-1 items-center justify-center hover:bg-[#F29AA7]  duration-300'>
+            <button id='SellerButton' className='border border-black rounded-md flex py-1 px-2 space-x-1 items-center justify-center hover:bg-[#F29AA7] hover:text-white  duration-300'>
               <p>Seller</p>
               <PiPackageLight className='text-black w-5 h-5' />
             </button>
@@ -46,7 +46,7 @@ const MiddleHeader = () => {
         </Link>
 
         <Link href={`${!ISLOGGEDIN ? '/register' : '/customer-panel'}`} suppressHydrationWarning className='px-4'>
-          <span id='SignUpButton' className={`border border-black rounded-md flex p-1 space-x-1 items-center justify-center hover:bg-[#F29AA7]  duration-300 ${ISLOGGEDIN ? `border-2 border-green-600 bg-green-100` : null}`}>
+          <span id='SignUpButton' className={`border border-black rounded-md flex py-1 px-2 space-x-1 items-center justify-center hover:bg-[#F29AA7]  hover:text-white  duration-300 ${ISLOGGEDIN ? `border-2 border-green-600 bg-green-100` : null}`}>
             <p>{!ISLOGGEDIN ? "Sign In / SignUp" : userInfos?.username} </p>
             <img src="/images/icons/HeaderUser.png" className='w-5 h-5' />
           </span>
@@ -54,7 +54,7 @@ const MiddleHeader = () => {
 
         <Link href='/shoppingcart' className='px-4'>
           <span id='ShoppingCartButton' className='bg-zinc-200/70 rounded-lg'>
-            <img src="/images/icons/HeaderShoppingCart.png" className='w-[35px] h-[35px] p-2 relative hover:scale-125 duration-300' />
+            <img src="/images/icons/HeaderShoppingCart.png" className='w-[45px] h-[45px] p-2 relative hover:scale-125 duration-300' />
             <p className='absolute bg-[#F29AA7] text-white px-1 top-5 font-bold text-sm rounded-[100%]'>{BAG.length}</p>
           </span>
         </Link>
