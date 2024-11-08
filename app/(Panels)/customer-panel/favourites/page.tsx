@@ -16,7 +16,7 @@ const CustomerPanelFavourites = () => {
     <section className='overflow-x-hidden'>
       <PanelsHeader />
       <CustomerPanelsSideBar pathname={pathName} />
-      <div className='ml-[22rem] mt-24 -z-10 text-black w-[80%] py-6 pr-32 grid grid-cols-2 place-items-start gap-6'>
+      <div className='ml-[22rem] mt-24 -z-10 text-black w-[80%] py-6 pr-16 grid grid-cols-2 place-items-center gap-y-8'>
         <FavouriteItem />
         <FavouriteItem />
         <FavouriteItem />

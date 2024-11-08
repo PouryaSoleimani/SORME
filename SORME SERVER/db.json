@@ -115,6 +115,12 @@
       "password": "$2a$10$rvPk3vmS8NAPSb7VnRqLUeOREGcZO0vJ472AefDSXA0/YFmhTdSdK",
       "username": "Pourya Soleimani",
       "id": 1
+    },
+    {
+      "email": "pouryasoleimani79@gmail.com",
+      "password": "$2a$10$HXhlgnYc2VK6rkFWELgVkO5k5C9K7L.KnVLvuvw6Ru7YGKgtzwb16",
+      "username": "pouryasoleimani",
+      "id": 2
     }
   ]
 }

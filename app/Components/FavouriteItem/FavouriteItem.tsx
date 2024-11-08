@@ -1,14 +1,16 @@
 //^ CUSTOMER-PANEL FAVOURITE ITEM COMPONENT
+"use client"
 import Link from 'next/link'
 import React from 'react'
 import { HeartOff } from 'lucide-react';
+import Image from 'next/image';
 
 const FavouriteItem = () => {
   return (
     <div>
 
       <Link href="#" className="flex flex-col items-center bg-[#FFF0F3] rounded-lg md:flex-row hover:scale-110 duration-500 box-border ">
-        <img className="object-cover w-full rounded-t-lg h-[15rem] md:h-[11.2rem] md:w-44 md:rounded-none md:rounded-s-lg translate-x-1" src="/images/favourites/Favourite_Item1.png" alt="Favourite_Item" />
+        <Image className="object-cover w-full rounded-t-lg h-[15rem] md:h-[11.2rem] md:w-44 md:rounded-none md:rounded-s-lg translate-x-1" width={200} height={250} src="/images/favourites/Favourite_Item1.png" alt="Favourite_Item" />
         <div id='Favourite_Details' className="flex flex-col justify-between p-4 leading-normal">
           <h5 className="mb-2 text-xl font-bold tracking-tight text-black dark:text-white">Estee Lauder Double</h5>
           <p className="mb-3 text-xl font-semibold text-black dark:text-gray-400">Wear Powder Cream</p>
