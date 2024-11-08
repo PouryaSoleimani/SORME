@@ -9,7 +9,7 @@ import Footer from '../Components/Footer/Footer'
 import Link from 'next/link'
 import 'animate.css';
 import { useRecoilState } from 'recoil'
-import { ALLPRODUCTS } from '../../Recoil/atoms'
+import { ALLPRODUCTS } from '@/Recoil/atoms'
 import './../Components/ProductsOrder/ProductsOrder.css'
 
 

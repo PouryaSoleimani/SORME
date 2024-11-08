@@ -71,6 +71,42 @@
       "brand": "Follero",
       "off": true,
       "offPercent": 60
+    },
+    {
+      "id": 7,
+      "title": "Fix Arcanil Powder",
+      "img": "/images/products/Product_1.png",
+      "rating": 3,
+      "views": 20,
+      "price": 60,
+      "seller": "Sorme",
+      "brand": "Follero",
+      "off": true,
+      "offPercent": 25
+    },
+    {
+      "id": 8,
+      "title": "Cozart Tanning Powder",
+      "img": "/images/products/Product_2.png",
+      "rating": 4,
+      "views": 42,
+      "price": 54,
+      "seller": "Sorme",
+      "brand": "Follero",
+      "off": true,
+      "offPercent": 10
+    },
+    {
+      "id": 9,
+      "title": "Estee Lauder Dpuble Wear",
+      "img": "/images/products/Product_3.png",
+      "rating": 5,
+      "views": 12,
+      "price": 98,
+      "seller": "Sorme",
+      "brand": "Follero",
+      "off": true,
+      "offPercent": 50
     }
   ],
   "users": [
