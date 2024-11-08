@@ -3,6 +3,7 @@
 import React from 'react'
 import { FaChevronDown } from "react-icons/fa";
 import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, DropdownSection } from "@nextui-org/dropdown";
+import { BsShop } from "react-icons/bs";
 import { Button } from '@nextui-org/button';
 import 'animate.css';
 import Link from 'next/link';
@@ -47,12 +48,12 @@ const ButtomHeader = () => {
 
         </Dropdown>
 
-        <span className='flex items-center justify-start space-x-4 text-md'>
-          <Link href='/shop' className='flex items-center justify-center cursor-pointer hover:scale-105 duration-300'>Brands <img src="/images/icons/BrandsLogo.png" className='w-6 h-6 ml-2' /></Link>
-          <Link href='/shop' className='flex items-center justify-center cursor-pointer hover:scale-105 duration-300'>Organizational <img src="/images/icons/OrganizationalLogo.png" className='w-5 h-5 ml-2' /></Link>
-          <Link href='/shop' className='flex items-center justify-center cursor-pointer hover:scale-105 duration-300'>Counseling <img src="/images/icons/CounselingLogo.png" className='w-5 h-5 ml-2' /></Link>
-          <Link href='/shop' className='flex items-center justify-center cursor-pointer hover:scale-105 duration-300'>Gift Card <img src="/images/icons/GiftCardLogo.png" className='w-4 h-4 ml-2' /></Link>
-          <Link href='/shop' className='flex items-center justify-center cursor-pointer hover:scale-105 duration-300'>Web Blog <img src="/images/icons/weblogLogo.png" className='w-4 h-4 ml-2' /></Link>
+        <span className='flex items-center justify-start space-x-8 text-md flex-shrink'>
+          <Link href='/shop' className='flex items-center justify-center cursor-pointer hover:scale-105 hover:bg-zinc-200 px-2 py-1.5 rounded-lg duration-300 whitespace-nowrap'>Products <BsShop className='ml-2 text-lg' /></Link>
+          <Link href='/shop' className='flex items-center justify-center cursor-pointer hover:scale-105 hover:bg-zinc-200 px-2 py-1.5 rounded-lg duration-300 whitespace-nowrap'>Organizational <img src="/images/icons/OrganizationalLogo.png" className='w-5 h-5 ml-2' /></Link>
+          <Link href='/shop' className='flex items-center justify-center cursor-pointer hover:scale-105 hover:bg-zinc-200 px-2 py-1.5 rounded-lg duration-300 whitespace-nowrap'>Counseling <img src="/images/icons/CounselingLogo.png" className='w-5 h-5 ml-2' /></Link>
+          <Link href='/shop' className='flex items-center justify-center cursor-pointer hover:scale-105 hover:bg-zinc-200 px-2 py-1.5 rounded-lg duration-300 whitespace-nowrap'>Gift Card <img src="/images/icons/GiftCardLogo.png" className='w-4 h-4 ml-2' /></Link>
+          <Link href='/shop' className='flex items-center justify-center cursor-pointer hover:scale-105 hover:bg-zinc-200 px-2 py-1.5 rounded-lg duration-300 whitespace-nowrap'>Web Blog <img src="/images/icons/weblogLogo.png" className='w-4 h-4 ml-2' /></Link>
         </span >
       </div >
 
