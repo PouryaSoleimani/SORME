@@ -10,6 +10,7 @@ import { isLoggedIn, USERINFOS } from '@/Recoil/atoms';
 
 
 const PanelsHeader: React.FC = () => {
+
   const [ISLOGGEDIN, setISLOGGEDIN] = useRecoilState(isLoggedIn)
   const [userInfos, setUserInfos] = useRecoilState(USERINFOS)
 
@@ -27,7 +28,7 @@ const PanelsHeader: React.FC = () => {
       <div id="right" className='flex items-center justify-center before:h-fit divide-x divide-black'>
 
         <Link href={`${!ISLOGGEDIN ? '/register' : '/customer-panel'}`} suppressHydrationWarning className='px-4'>
-          <span id='SignUpButton' className={`border border-black rounded-md flex py-1 px-2 space-x-1 items-center justify-center hover:bg-[#F29AA7]  hover:text-white  duration-300 ${ISLOGGEDIN ? `border-2 border-green-600 bg-green-100 hover:bg-green-900` : null}`}>
+          <span id='SignUpButton' className={`border border-black rounded-md flex py-2 px-3 space-x-1 items-center justify-center hover:bg-[#F29AA7]  hover:text-white  duration-300 ${ISLOGGEDIN ? `border-2 border-green-600 bg-green-100 hover:bg-green-900` : null}`}>
             <p>{!ISLOGGEDIN ? "Sign In / SignUp" : userInfos?.username} </p>
             <img src="/images/icons/HeaderUser.png" className='w-5 h-5' />
           </span>
