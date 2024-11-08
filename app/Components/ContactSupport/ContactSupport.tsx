@@ -38,13 +38,13 @@ const ContactSupport = () => {
           <div className='flex items-end justify-start w-full'>
             <span className='flex flex-col'>
               <label htmlFor="name" className='absolute -translate-y-5 text-2xl font-bold z-30 translate-x-5 bg-zinc-100'>Name</label>
-              <input type="text" placeholder='Sourosh Rasouli' {...register("name")} className='px-1 py-6 z-0 border-2 placeholder:text-xl relative placeholder:text-zinc-400 border-[#F29AA7] rounded-xl w-[16rem]' />
+              <input type="text" placeholder='Sourosh Rasouli' {...register("name")} className='px-5 py-6 z-0 border-2 placeholder:text-md relative placeholder:text-zinc-400  border-[#F29AA7] rounded-xl w-[16rem]' />
               {errors.name && <p className='text-red-700 font-semibold'>{errors.name.message}</p>}
             </span>
 
             <span className='flex flex-col'>
               <label htmlFor="email" className='absolute -translate-y-5 text-2xl font-bold z-30 translate-x-14 bg-zinc-100'>Email</label>
-              <input type="email" placeholder='Sourosh Rasouli' {...register("email")} className='ml-10 px-1 py-6 z-0 border-2 relative placeholder:text-xl placeholder:text-zinc-400 border-[#F29AA7] rounded-xl w-[16rem]' />
+              <input type="email" placeholder='Sourosh Rasouli@gmail.com' {...register("email")} className='ml-10 px-5 py-6 z-0 border-2 relative placeholder:text-md placeholder:text-zinc-400 border-[#F29AA7] rounded-xl w-[16rem]' />
               {errors.email && <p className='text-red-700 font-semibold translate-x-10'>{errors.email.message}</p>}
             </span>
 
@@ -52,7 +52,7 @@ const ContactSupport = () => {
 
           <div className='flex  items-start justify-start py-6 flex-col my-4 w-full'>
             <label htmlFor="message" className='absolute  text-2xl font-bold z-30 -translate-y-4 translate-x-4 bg-zinc-100'>Your Message</label>
-            <textarea placeholder='Hello, in my opinion' {...register("message")} className='ml-10 px-3 -translate-x-10 relative py-6 z-0 border-2 placeholder:text-xl placeholder:text-zinc-400 border-[#F29AA7] rounded-xl w-full resize-none' />
+            <textarea placeholder='Hello, in my opinion' {...register("message")} className='ml-10 px-5 -translate-x-10 relative py-6 z-0 border-2 placeholder:text-md placeholder:text-zinc-400 border-[#F29AA7] rounded-xl w-full resize-none' />
             {errors.message && <p className='text-red-700 font-semibold'>{errors.message.message}</p>}
           </div>
 
