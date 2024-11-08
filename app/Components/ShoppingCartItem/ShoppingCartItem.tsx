@@ -9,7 +9,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { TiHeartOutline } from "react-icons/ti";
 import { RiDeleteBinLine } from "react-icons/ri";
 import { useRecoilState } from 'recoil';
-import { SHOPPINGCART } from '@/app/Recoil/atoms';
+import { SHOPPINGCART } from '@/Recoil/atoms';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import 'animate.css';

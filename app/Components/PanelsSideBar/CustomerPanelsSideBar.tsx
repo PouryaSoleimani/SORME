@@ -5,7 +5,7 @@ import { Skeleton } from "@nextui-org/skeleton";
 import Link from 'next/link';
 import 'animate.css';
 import { useRecoilState } from 'recoil';
-import { USERINFOS } from '@/app/Recoil/atoms';
+import { USERINFOS } from '@/Recoil/atoms';
 
 
 const CustomerPanelsSideBar: React.FC<{ pathname: string }> = ({ pathname }) => {

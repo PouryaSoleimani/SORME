@@ -1,7 +1,7 @@
 //^ SHOPPING CART COMPONENT ======================================================================================================================================================
 "use client"
 import Link from 'next/link'
-import { SHOPPINGCART } from '@/app/Recoil/atoms';
+import { SHOPPINGCART } from '@/Recoil/atoms';
 import 'aos/dist/aos.css';
 import AOS from 'aos';
 import 'animate.css';

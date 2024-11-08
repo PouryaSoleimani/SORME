@@ -9,7 +9,7 @@ import { FiEye } from "react-icons/fi";
 import { FiEyeOff } from "react-icons/fi";
 import { useRouter } from "next/navigation";
 import { useRecoilState } from "recoil";
-import { TOKEN, USERINFOS, isLoggedIn } from "@/app/Recoil/atoms";
+import { TOKEN, USERINFOS, isLoggedIn } from "@/Recoil/atoms";
 import toast, { Toaster } from 'react-hot-toast';
 import axios from 'axios'
 import Link from "next/link";

@@ -8,7 +8,7 @@ import { useForm, SubmitHandler } from "react-hook-form"
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { useRecoilState } from 'recoil'
-import { TOKEN, USERINFOS, isLoggedIn } from '@/app/Recoil/atoms'
+import { TOKEN, USERINFOS, isLoggedIn } from '@/Recoil/atoms'
 import toast, { Toaster } from 'react-hot-toast';
 import { useRouter } from 'next/navigation'
 

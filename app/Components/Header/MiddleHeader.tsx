@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { PiPackageLight } from "react-icons/pi";
 import 'animate.css';
 import { useRecoilState } from 'recoil';
-import { SHOPPINGCART, USERINFOS, isLoggedIn } from '@/app/Recoil/atoms';
+import { SHOPPINGCART, USERINFOS, isLoggedIn } from '@/Recoil/atoms';
 import { useState, useEffect } from 'react'
 
 

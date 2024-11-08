@@ -1,3 +1,4 @@
+"use client"
 import React from 'react'
 import HomeOptionItem from './HomeOptionItem'
 import 'aos/dist/aos.css';

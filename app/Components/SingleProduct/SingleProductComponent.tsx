@@ -6,7 +6,7 @@ import toast, { Toaster } from 'react-hot-toast';
 import { FaRegStar, FaStar } from 'react-icons/fa'
 import 'aos/dist/aos.css';
 import { useRecoilState } from 'recoil';
-import { ALLPRODUCTS, SHOPPINGCART } from '@/app/Recoil/atoms';
+import { ALLPRODUCTS, SHOPPINGCART } from '@/Recoil/atoms';
 import { v4 as uuidv4 } from 'uuid';
 import Aos from 'aos';
 import { useLayoutEffect } from 'react';

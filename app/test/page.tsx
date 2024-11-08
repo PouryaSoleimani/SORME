@@ -3,7 +3,7 @@
 import { Image } from '@nextui-org/react'
 import React, { FormEventHandler, useState } from 'react'
 import { FaStar } from "react-icons/fa";
-import { SHOPPINGCART } from '../Recoil/atoms';
+import { SHOPPINGCART } from '../../Recoil/atoms';
 import { useRecoilState } from 'recoil';
 import { v4 as uuidv4 } from 'uuid';
 import axios from 'axios'

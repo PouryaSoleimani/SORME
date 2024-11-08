@@ -1,5 +1,5 @@
 "use client"
-import { SHOPPINGCART } from '@/app/Recoil/atoms'
+import { SHOPPINGCART } from '@/Recoil/atoms'
 import React, { useEffect, useState } from 'react'
 import { useRecoilState } from 'recoil'
 

@@ -1,3 +1,4 @@
+"use client"
 import React from 'react'
 import HomeReviewItem from './HomeReviewItem'
 import 'aos/dist/aos.css';
